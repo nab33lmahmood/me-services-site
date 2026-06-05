@@ -13,7 +13,7 @@ const contactSteps = [
   },
   {
     title: 'A clear next step',
-    body: 'If there is a fit, we agree a clear scope and next step. If there is not, we will say so directly.',
+    body: 'If there is a fit, we agree on a clear scope and next step. If there is not, we will say so directly.',
   },
 ]
 

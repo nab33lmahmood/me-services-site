@@ -25,7 +25,7 @@ const pillars = [
 ]
 
 const stats = [
-  { number: '20', label: 'Years experience' },
+  { number: '20', label: 'Years of experience' },
   { number: '$20M', label: 'Portfolio managed' },
   { number: '150', label: 'Enterprise apps governed' },
   { number: '2.3M', label: 'Files migrated' },
@@ -74,7 +74,7 @@ export default function HomePage() {
         <ContentWrapper>
           <div className="pillars__header">
             <p className="eyebrow eyebrow--navy">What we do</p>
-            <h2 className="pillars__heading">What we do</h2>
+            <h2 className="pillars__heading">Three ways we help</h2>
             <hr className="pillars__rule" />
             <p className="pillars__subheading">
               Three service lines. All grounded in 20 years of senior technology
@@ -128,7 +128,7 @@ export default function HomePage() {
                 board level and we deliver at the coalface.
               </p>
               <p className="about-teaser__body">
-                Founded with 20 years of senior technology leadership across
+                Built on 20 years of senior technology leadership across
                 government, healthcare, insurance, and retail. $20M+ portfolios
                 managed. 150+ enterprise applications governed.
               </p>
@@ -138,7 +138,7 @@ export default function HomePage() {
             </div>
 
             <div className="about-teaser__credentials">
-              <h3 className="about-teaser__credentials-heading">Our principals bring</h3>
+              <h3 className="about-teaser__credentials-heading">What our principals bring</h3>
               <ul className="about-teaser__credentials-list">
                 {credentials.map((item) => (
                   <li

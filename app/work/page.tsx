@@ -29,12 +29,12 @@ const workCards = [
     sector: 'Technology / law enforcement',
     title: 'Law Enforcement Platform Delivery',
     description:
-      'Delivered NetRMS law enforcement systems across multiple US states for a global blue-chip technology organisation. Led cross-border Australia and USA delivery teams, managing complex stakeholder environments across government agencies and achieving 95% stakeholder satisfaction on program delivery.',
+      'Delivered NetRMS law enforcement systems across multiple US states for a global blue-chip technology organisation. Led cross-border Australian and US delivery teams, managing complex stakeholder environments across government agencies and achieving 95% stakeholder satisfaction on program delivery.',
     outcome: '95% stakeholder satisfaction',
   },
   {
     sector: 'CRM / enterprise platforms',
-    title: 'Dynamics 365 CRM and Model-Driven Apps',
+    title: 'Dynamics 365 CRM and model-driven apps',
     description:
       'Delivered Microsoft Dynamics 365 CRM implementation and model-driven application development for an enterprise client. Covered platform architecture, data modelling, business process automation, and stakeholder adoption. Integrated with existing enterprise systems to create a unified operational platform across the organisation.',
     outcome: 'Enterprise CRM delivered',
@@ -42,7 +42,7 @@ const workCards = [
 ]
 
 const stats = [
-  { number: '20+', label: 'Years experience' },
+  { number: '20+', label: 'Years of experience' },
   { number: '$20M+', label: 'Portfolio managed' },
   { number: '150+', label: 'Enterprise apps governed' },
   { number: '2.3M+', label: 'Files migrated' },

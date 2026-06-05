@@ -37,7 +37,7 @@ const services: ServiceSection[] = [
     bodySecondary:
       'AI readiness is now a core element of every technology advisory engagement. We assess organisational readiness for AI adoption, define governance frameworks for responsible AI use, and translate AI strategy into practical roadmaps that boards and executives can act on. Microsoft Copilot, Azure AI, and Power Platform are central to how we approach this work.',
     suited:
-      'Suited to: boards that need independent technology assurance, organisations mid-transformation that need strategic oversight, or technology functions that need senior lift without a permanent hire.',
+      'Suited to: boards that need independent technology assurance, organisations in mid-transformation that need strategic oversight, or technology functions that need senior lift without a permanent hire.',
     cardHeading: 'Typical engagements',
     engagements: [
       {
@@ -65,7 +65,7 @@ const services: ServiceSection[] = [
       'Power Platform',
       'Microsoft Copilot',
       'Azure AI',
-      'AI Readiness',
+      'AI readiness',
       'ITIL 4',
       'APRA/GDPR',
     ],
@@ -310,7 +310,7 @@ export default function ServicesPage() {
               an established network of delivery partners including Microsoft,
               Azure AI, and Salesforce ecosystem specialists. For AI adoption
               programs, we work with Microsoft-certified AI and Copilot partners
-              to ensure implementations are delivered to the standard the
+              to ensure implementations are delivered to the standard that the
               technology requires.
             </p>
           </div>

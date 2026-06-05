@@ -59,7 +59,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="footer__contact-muted">
-                  Melbourne, VIC Australia
+                  Melbourne, VIC, Australia
                 </span>
               </li>
             </ul>
