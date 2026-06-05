@@ -18,6 +18,7 @@ type ServiceSection = {
   pill: string
   heading: string
   body: string
+  bodySecondary: string
   suited: string
   cardHeading: string
   engagements: ServiceEngagement[]
@@ -33,6 +34,8 @@ const services: ServiceSection[] = [
     pill: 'Advisory',
     heading: 'Technology Advisory',
     body: 'Director-level technology advisory for organisations that need senior thinking without full-time headcount. Our principals engage at board and executive level, providing independent perspective on technology strategy, architecture decisions, vendor governance, and investment priorities.',
+    bodySecondary:
+      'AI readiness is now a core element of every technology advisory engagement. We assess organisational readiness for AI adoption, define governance frameworks for responsible AI use, and translate AI strategy into practical roadmaps that boards and executives can act on. Microsoft Copilot, Azure AI, and Power Platform are central to how we approach this work.',
     suited:
       'Suited to: boards that need independent technology assurance, organisations mid-transformation that need strategic oversight, or technology functions that need senior lift without a permanent hire.',
     cardHeading: 'Typical engagements',
@@ -49,6 +52,10 @@ const services: ServiceSection[] = [
         label: 'Board-level technology reporting',
         body: 'Translating technical complexity into board-ready language and governance frameworks.',
       },
+      {
+        label: 'AI readiness and governance',
+        body: 'Assessing organisational readiness for AI adoption, defining responsible use frameworks, and building board-ready AI investment roadmaps.',
+      },
     ],
     tags: [
       'Azure',
@@ -56,6 +63,9 @@ const services: ServiceSection[] = [
       'Dynamics 365',
       'SharePoint',
       'Power Platform',
+      'Microsoft Copilot',
+      'Azure AI',
+      'AI Readiness',
       'ITIL 4',
       'APRA/GDPR',
     ],
@@ -66,6 +76,8 @@ const services: ServiceSection[] = [
     pill: 'Transformation',
     heading: 'Digital Transformation',
     body: 'End-to-end delivery of digital transformation programs. Business applications, enterprise platform modernisation, M365 rollouts, cloud migration, and operational uplift. From business case through to live systems and adopted workflows.',
+    bodySecondary:
+      'AI-enabled transformation is a growing part of this work. We design and deliver automation and intelligence capabilities using Microsoft Copilot, Power Automate, and Azure-native AI services, embedded into business workflows rather than bolted on as separate tools.',
     suited:
       'Suited to: mid-market organisations running legacy platforms, technology teams under-resourced for program scale, or boards with transformation mandates and no delivery confidence.',
     cardHeading: 'Typical engagements',
@@ -82,6 +94,10 @@ const services: ServiceSection[] = [
         label: 'Operational uplift',
         body: 'Service management, governance frameworks, and capability uplift across technology functions.',
       },
+      {
+        label: 'AI and automation implementation',
+        body: 'Delivering Microsoft Copilot, Power Automate, and Azure AI capabilities embedded into existing business processes and platforms.',
+      },
     ],
     tags: [
       '.NET',
@@ -90,6 +106,9 @@ const services: ServiceSection[] = [
       'Power BI',
       'Dataverse',
       'Dynamics 365',
+      'Microsoft Copilot',
+      'Power Automate',
+      'Azure AI',
       'K2',
       'Event-driven architecture',
     ],
@@ -102,6 +121,8 @@ const services: ServiceSection[] = [
     pill: 'Delivery',
     heading: 'Program Delivery',
     body: 'Senior program and project leadership for complex technology initiatives. Governance frameworks, stakeholder and vendor management, delivery discipline, and reporting to executive and board level. Delivered to MSP, PRINCE2, and PMBOK standards.',
+    bodySecondary:
+      'AI programs require the same delivery discipline as any complex technology initiative, and often more. We provide governance, vendor management, and stakeholder oversight for AI adoption programs, ensuring delivery accountability from pilot through to scaled deployment.',
     suited:
       'Suited to: programs that have stalled, organisations without internal PM capability at the required seniority, or initiatives with regulatory or compliance requirements.',
     cardHeading: 'Typical engagements',
@@ -117,6 +138,10 @@ const services: ServiceSection[] = [
       {
         label: 'Vendor and commercial management',
         body: 'Managing technology vendors, contracts, and performance at the principal level.',
+      },
+      {
+        label: 'AI program governance',
+        body: 'Providing delivery leadership, governance frameworks, and executive reporting for AI adoption programs from pilot through to scaled deployment.',
       },
     ],
     tags: [
@@ -214,6 +239,7 @@ export default function ServicesPage() {
                 <span className="label-pill">{service.pill}</span>
                 <h2 className="service-heading">{service.heading}</h2>
                 <p className="section-body">{service.body}</p>
+                <p className="section-body">{service.bodySecondary}</p>
                 <p className="section-body--muted">{service.suited}</p>
               </div>
               <div className="two-col__detail">
@@ -281,9 +307,11 @@ export default function ServicesPage() {
               }}
             >
               Where engagements require specialist platform capability, we draw on
-              an established network of delivery partners including Microsoft and
-              Salesforce ecosystem specialists. You get the right expertise for
-              the job without managing multiple firms.
+              an established network of delivery partners including Microsoft,
+              Azure AI, and Salesforce ecosystem specialists. For AI adoption
+              programs, we work with Microsoft-certified AI and Copilot partners
+              to ensure implementations are delivered to the standard the
+              technology requires.
             </p>
           </div>
 
