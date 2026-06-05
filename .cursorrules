@@ -1,0 +1,212 @@
+# ME BRAND SYSTEM — Cursor Rules
+# Version: 1.1 | Owner: Nabeel Mahmood | May 2026
+# This file is the single source of truth for all brand decisions in this project.
+# Read this before generating or editing any UI code, styles, or components.
+
+---
+
+## Project Identity
+
+This project is part of the ME (Mindful Engagement) product family.
+Products: ME Pulse (operational health dashboard), ME Kind Cloud (charity platform).
+All products share one unified brand system. No product-specific colour schemes.
+
+---
+
+## Non-Negotiable Rules
+
+1. Font is Arial for all UI, body, labels, and documentation. DM Serif Display is permitted
+   as a controlled exception for product wordmark, hero headings, and onboarding titles only.
+   No other typefaces. No Google Fonts beyond these two. No system-ui as primary.
+2. No em dashes anywhere in UI text, comments, or copy. Use commas, colons, or full stops.
+3. Gold (#C9A84C) is accent only. Never use as a large background fill or dominant surface colour.
+4. Status colours are locked. Green #1A7F4B, Amber #E8A020, Red #C0392B, Unset #D0D0D0. Do not substitute or repurpose.
+5. No gradients except the approved hero gradient (see Controlled Exceptions below).
+   No drop shadows beyond --me-shadow-card. No blur effects or glow on any element.
+6. No decorative icons, illustrations, or SmartArt in documentation outputs.
+7. Sentence case for all UI labels and body text. All caps for section headers only.
+8. Page background is Off White #F7F7F5. Never pure white #FFFFFF as a page background.
+
+---
+
+## Controlled Exceptions
+# These are deliberate design decisions. Do not remove or override them.
+
+### Display Typography Exception
+DM Serif Display is permitted in these specific contexts only:
+- Product wordmark (ME Pulse, ME Kind Cloud)
+- Hero section headings (the primary H1 on a hero/header surface)
+- Onboarding screen titles (first screen of the onboarding flow)
+Everywhere else: Arial.
+
+### Hero Gradient Exception
+A subtle linear gradient is permitted on hero and onboarding surfaces only.
+Permitted gradient: linear-gradient(135deg, #0F2447 0%, #1B3A6B 100%)
+That is Ink Navy to Brand Navy. Both stops must be within the navy ramp.
+No gradients on cards, buttons, badges, nav items, or any other UI element.
+No gradients using gold, grey, or any non-navy colour.
+
+---
+
+## Colour Tokens — Always Use These, Never Hardcode
+
+Read from me-brand-tokens.css (CSS) or me-brand-tokens.ts (JS/TS).
+
+### Navy Ramp
+- Ink Navy:    #0F2447   Hero backgrounds, deep headers
+- Brand Navy:  #1B3A6B   Primary brand, navigation, key UI elements
+- Active Navy: #2A5298   Hover and interactive states
+
+### Gold Ramp
+- Brand Gold:  #C9A84C   Accent only -- CTAs, rules, key data, active indicators
+- Light Gold:  #E8C96A   Hover fills on gold elements
+- Gold Wash:   #FBF5E6   Subtle fills, alternating rows, callout panels
+
+### Neutral + Surface
+- White:       #FFFFFF   Card surface
+- Off White:   #F7F7F5   Page background
+- Border:      #EBEBEB   All dividers and borders
+- Charcoal:    #1C1C1E   Body text and headings
+- Mid Grey:    #4A4A4A   Subtext, metadata, dates
+- Muted:       #8A8A8A   Placeholder, disabled, tertiary
+
+### Status (locked -- never repurpose)
+- Green:       #1A7F4B   fill / #E6F4ED background
+- Amber:       #E8A020   fill / #FEF3DC background
+- Red:         #C0392B   fill / #FAEAEA background
+- Unset:       #D0D0D0   fill / #EBEBEB background
+
+### Admin / Back End Surface
+- Admin BG:    #1C1C1E
+- Admin Card:  #2A2A2E
+- Admin Border:#3A3A3E
+
+---
+
+## Typography Scale
+
+All sizes in rem. Font weight: 400 regular or 700 bold only. Never 600.
+
+- Display:  4.5rem   bold   DM Serif Display   Ink Navy    Hero, wordmark (exception permitted)
+- H1:       1.375rem bold   Arial   all-caps    Charcoal or Ink Navy    Page titles
+- H2:       1.125rem bold   Arial               Brand Gold or Brand Navy Section titles
+- H3:       1rem     bold   Arial               Charcoal                Subsections
+- Body:     1rem     400    Arial   1.6 line-height   Charcoal
+- Small:    0.875rem 400    Arial               Mid Grey
+- Label:    0.6875rem 700   Arial  uppercase 0.1em tracking  Muted or Charcoal
+- Meta:     0.8125rem 400   Arial  italic     Mid Grey
+- Caption:  0.75rem  400    Arial              Muted
+
+---
+
+## Component Patterns
+
+### Page layout
+- Background: var(--me-off-white) / #F7F7F5
+- Cards: white #FFFFFF, 0.5px border #EBEBEB, border-radius 12px, shadow 0 1px 3px rgba(15,36,71,0.08)
+- Hero sections: Ink Navy to Brand Navy gradient (exception), white text, gold accents
+
+### Section headers
+- Bold, 1.375rem, all-caps, Arial, Charcoal
+- Followed by a 1px gold (#C9A84C) bottom border rule
+- Margin bottom 1rem after the rule
+
+### Navigation
+- Background: Brand Navy #1B3A6B
+- Text: white
+- Active item: Brand Gold #C9A84C text or gold left border accent
+
+### Buttons
+- Primary: Brand Navy fill, white text, border-radius 8px
+- Primary hover: Active Navy #2A5298 fill
+- Secondary: white fill, Brand Navy border and text
+- Secondary hover: Off White fill
+- Gold CTA (high importance only): Brand Gold fill, white text
+- Focus ring: 2px Brand Gold outline on all interactive elements
+
+### Status indicators
+- Dot: 10px filled circle in status colour
+- Badge: status colour background (light), status colour text (dark), border-radius 9999px, 0.6875rem bold
+- Row highlight: light status background on full row
+- Never use status colours for anything other than Green/Amber/Red/Unset states
+
+### Tables
+- Header row: Ink Navy background, Brand Gold text, bold
+- Alternating rows: Gold Wash #FBF5E6 and Off White #F7F7F5
+- Border: 0.5px #EBEBEB between rows only
+- Cell padding: 0.75rem 1rem
+
+### Forms
+- Input border: 0.5px #EBEBEB, border-radius 8px
+- Input focus: 2px Brand Gold ring
+- Label: 0.6875rem bold uppercase Charcoal, 0.5rem margin below
+- Error state: Red #C0392B border, Red light #FAEAEA background
+
+---
+
+## Surface-Specific Rules
+
+### Front End (Public App)
+- Page bg: Off White
+- Cards: White surface
+- Gold used for: CTAs, active states, section rules, key metrics only
+- Status colours for ME Pulse standards only
+
+### Back End (Admin)
+- Page bg: #1C1C1E (Admin BG)
+- Cards: #2A2A2E (Admin Card)
+- Gold used for: active nav items, primary action buttons, key data only
+- Same status colours as front end
+
+### Documentation output (when generating Word/PDF/Markdown)
+- Header: Ink Navy background, white name/title, Brand Gold sub-label
+- Gold rule divider below every section header
+- Arial throughout, no other fonts
+- Alternating table rows: Gold Wash and Off White
+- No decorative elements, no icons, no SmartArt
+
+---
+
+## Anti-Patterns -- Never Generate These
+
+- Hardcoded colour hex values in components (use tokens or variables)
+- Any font other than Arial or DM Serif Display (DM Serif Display in hero/wordmark only)
+- Em dashes (use commas, colons, or full stops)
+- Gradients outside the approved hero gradient exception
+- Drop shadows beyond the approved card shadow
+- Gold as a background colour at scale
+- Status colours used for non-status decoration
+- All-caps text outside section headers
+- Multiple font weights beyond 400 and 700
+- Pure white #FFFFFF as a page background
+- New colours introduced outside this token set
+
+---
+
+## Brand Voice (for any copy or UI text generated)
+
+- Direct: lead with the point, no preamble
+- Grounded: confident, not hyperbolic
+- Human: written by a person for a person
+- No filler: excited to, leverage, unlock potential, best-in-class, game-changing
+
+Taglines (use these, do not invent alternatives):
+- Primary: "Know what is healthy. Fix what is not."
+- Secondary: "Your operational heartbeat."
+- Tertiary: "Stay aware. Stay steady."
+
+---
+
+## File References
+
+- me-brand-tokens.css       CSS custom properties for all web projects
+- me-brand-tokens.ts        JS/TS token object for React and Node projects
+- ME_Brand_System_v1.0.docx Full brand specification document
+
+---
+
+## Change Protocol
+
+Do not modify brand tokens or rules without updating ME_Brand_System_v1.0.docx.
+All token changes require a version increment in all three files above.
+Owner: Nabeel Mahmood

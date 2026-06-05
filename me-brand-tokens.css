@@ -1,0 +1,187 @@
+/* ============================================================
+   ME BRAND SYSTEM — Design Tokens
+   Version: 1.0 | Owner: Nabeel Mahmood | May 2026
+   Applies to: ME Pulse, ME Kind Cloud, all future ME products
+   ============================================================ */
+
+:root {
+
+  /* ── NAVY RAMP ─────────────────────────────────────────── */
+  --me-ink-navy:       #0F2447;   /* Hero backgrounds, deep headers */
+  --me-brand-navy:     #1B3A6B;   /* Primary brand colour, nav, key UI */
+  --me-active-navy:    #2A5298;   /* Hover states, interactive elements */
+
+  /* ── GOLD RAMP ─────────────────────────────────────────── */
+  --me-brand-gold:     #C9A84C;   /* Primary accent — use sparingly */
+  --me-light-gold:     #E8C96A;   /* Hover fills on gold elements */
+  --me-gold-wash:      #FBF5E6;   /* Subtle fills, alt table rows, callouts */
+
+  /* ── NEUTRAL + SURFACE ─────────────────────────────────── */
+  --me-white:          #FFFFFF;   /* Primary card surface */
+  --me-off-white:      #F7F7F5;   /* Page background — never pure white */
+  --me-border:         #EBEBEB;   /* All dividers and borders */
+  --me-charcoal:       #1C1C1E;   /* Body text, headings, primary content */
+  --me-mid-grey:       #4A4A4A;   /* Subtext, metadata, dates */
+  --me-muted:          #8A8A8A;   /* Placeholder, disabled, tertiary */
+
+  /* ── STATUS COLOURS (locked — do not repurpose) ─────────── */
+  --me-green:          #1A7F4B;   /* Standard maintained / healthy */
+  --me-green-light:    #E6F4ED;   /* Green row/card background fill */
+  --me-amber:          #E8A020;   /* Needs attention */
+  --me-amber-light:    #FEF3DC;   /* Amber row/card background fill */
+  --me-red:            #C0392B;   /* Action required */
+  --me-red-light:      #FAEAEA;   /* Red row/card background fill */
+  --me-unset:          #D0D0D0;   /* Not yet reviewed */
+
+  /* ── BACK END SURFACE (admin/internal only) ─────────────── */
+  --me-admin-bg:       #1C1C1E;
+  --me-admin-card:     #2A2A2E;
+  --me-admin-border:   #3A3A3E;
+
+  /* ── TYPOGRAPHY ─────────────────────────────────────────── */
+  --me-font:           'Arial', sans-serif;  /* Single typeface — no exceptions */
+
+  --me-size-display:   4.5rem;    /* Logo / hero display */
+  --me-size-h1:        1.375rem;  /* Page title — all caps */
+  --me-size-h2:        1.125rem;  /* Section title */
+  --me-size-h3:        1rem;      /* Subsection */
+  --me-size-body:      1rem;      /* Body standard */
+  --me-size-small:     0.875rem;  /* Body small */
+  --me-size-label:     0.6875rem; /* Tag / label — uppercase */
+  --me-size-meta:      0.8125rem; /* Date / meta — italic */
+  --me-size-caption:   0.75rem;   /* Caption */
+
+  --me-weight-regular: 400;
+  --me-weight-bold:    700;
+
+  --me-line-body:      1.6;
+  --me-line-heading:   1.3;
+
+  --me-tracking-label: 0.1em;     /* Letter spacing for uppercase labels */
+  --me-tracking-hero:  -0.02em;   /* Tight tracking for display text */
+
+  /* ── SPACING ─────────────────────────────────────────────── */
+  --me-space-1:  0.25rem;   /*  4px */
+  --me-space-2:  0.5rem;    /*  8px */
+  --me-space-3:  0.75rem;   /* 12px */
+  --me-space-4:  1rem;      /* 16px */
+  --me-space-5:  1.25rem;   /* 20px */
+  --me-space-6:  1.5rem;    /* 24px */
+  --me-space-8:  2rem;      /* 32px */
+  --me-space-10: 2.5rem;    /* 40px */
+  --me-space-12: 3rem;      /* 48px */
+  --me-space-16: 4rem;      /* 64px */
+
+  /* ── BORDERS + RADIUS ────────────────────────────────────── */
+  --me-radius-sm:   6px;
+  --me-radius-md:   8px;
+  --me-radius-lg:   12px;
+  --me-radius-xl:   16px;
+  --me-radius-full: 9999px;
+
+  --me-border-thin:   0.5px solid var(--me-border);
+  --me-border-medium: 1px solid var(--me-border);
+
+  /* ── INTERACTIVE STATES ──────────────────────────────────── */
+  --me-focus-ring: 0 0 0 2px var(--me-brand-gold);
+
+  /* ── SHADOWS (functional only — no decorative) ───────────── */
+  --me-shadow-card: 0 1px 3px rgba(15, 36, 71, 0.08);
+
+  /* ── Z-INDEX SCALE ───────────────────────────────────────── */
+  --me-z-base:    0;
+  --me-z-raised:  10;
+  --me-z-modal:   100;
+  --me-z-toast:   200;
+
+  /* ── CONTROLLED EXCEPTIONS (deliberate design decisions) ────────────── */
+  --me-hero-gradient: linear-gradient(135deg, #0F2447 0%, #1B3A6B 100%);
+  --me-display-font:  'DM Serif Display', serif;  /* Hero and wordmark only */
+}
+
+/* ── ADMIN / BACK END DARK SURFACE ──────────────────────────
+   Apply .me-admin-surface to the root admin container
+   ─────────────────────────────────────────────────────────── */
+.me-admin-surface {
+  --me-white:     #2A2A2E;
+  --me-off-white: #1C1C1E;
+  --me-border:    #3A3A3E;
+  --me-charcoal:  #FFFFFF;
+  --me-mid-grey:  #8A8A8A;
+  background-color: var(--me-admin-bg);
+  color: var(--me-charcoal);
+}
+
+/* ── BASE RESETS ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--me-font);
+  font-size: var(--me-size-body);
+  font-weight: var(--me-weight-regular);
+  line-height: var(--me-line-body);
+  color: var(--me-charcoal);
+  background-color: var(--me-off-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── UTILITY CLASSES ─────────────────────────────────────── */
+
+/* Colours */
+.me-text-navy       { color: var(--me-brand-navy); }
+.me-text-gold       { color: var(--me-brand-gold); }
+.me-text-charcoal   { color: var(--me-charcoal); }
+.me-text-muted      { color: var(--me-muted); }
+
+.me-bg-navy         { background-color: var(--me-brand-navy); }
+.me-bg-ink          { background-color: var(--me-ink-navy); }
+.me-bg-gold-wash    { background-color: var(--me-gold-wash); }
+.me-bg-white        { background-color: var(--me-white); }
+
+/* Status */
+.me-status-green    { color: var(--me-green); }
+.me-status-amber    { color: var(--me-amber); }
+.me-status-red      { color: var(--me-red); }
+.me-status-unset    { color: var(--me-unset); }
+
+.me-status-bg-green { background-color: var(--me-green-light); color: var(--me-green); }
+.me-status-bg-amber { background-color: var(--me-amber-light); color: var(--me-amber); }
+.me-status-bg-red   { background-color: var(--me-red-light);   color: var(--me-red); }
+.me-status-bg-unset { background-color: var(--me-border);      color: var(--me-mid-grey); }
+
+/* Section header with gold rule */
+.me-section-header {
+  font-family: var(--me-font);
+  font-size: var(--me-size-h1);
+  font-weight: var(--me-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--me-charcoal);
+  border-bottom: 1px solid var(--me-brand-gold);
+  padding-bottom: var(--me-space-2);
+  margin-bottom: var(--me-space-4);
+}
+
+/* Card */
+.me-card {
+  background-color: var(--me-white);
+  border: var(--me-border-thin);
+  border-radius: var(--me-radius-lg);
+  padding: var(--me-space-4) var(--me-space-5);
+  box-shadow: var(--me-shadow-card);
+}
+
+/* Gold rule divider */
+.me-rule {
+  border: none;
+  border-top: 1px solid var(--me-brand-gold);
+  margin: var(--me-space-6) 0;
+}
+
+/* Focus ring — accessible */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--me-focus-ring);
+}
