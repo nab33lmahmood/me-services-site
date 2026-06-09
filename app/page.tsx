@@ -62,6 +62,14 @@ export default function HomePage() {
               <Link href="/services" className="btn btn--gold-cta">
                 See our services
               </Link>
+              <a
+                href="https://outlook.office.com/bookwithme/user/25c56a4fa3284335a44e6074818ec6b2@mindful-engagement.com/meetingtype/919g0__r40qOZkbF6AvhhA2?anonymous&ismsaljsauthenabled&ep=mCardFromTile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn--outline"
+              >
+                Book a 15-minute call
+              </a>
               <Link href="/contact" className="btn btn--ghost">
                 Get in touch
               </Link>

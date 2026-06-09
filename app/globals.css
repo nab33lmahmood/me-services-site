@@ -167,6 +167,28 @@ body {
   background-color: var(--me-off-white);
 }
 
+.btn--outline {
+  background-color: transparent;
+  color: var(--me-brand-navy);
+  border-color: var(--me-brand-navy);
+}
+
+.btn--outline:hover {
+  background-color: var(--me-brand-navy);
+  color: var(--me-white);
+}
+
+.hero__buttons .btn--outline {
+  color: var(--me-white);
+  border-color: var(--me-white-50);
+}
+
+.hero__buttons .btn--outline:hover {
+  background-color: var(--me-brand-navy);
+  color: var(--me-white);
+  border-color: var(--me-brand-navy);
+}
+
 .btn--gold-cta {
   background-color: var(--me-brand-gold);
   color: var(--me-ink-navy);
@@ -1487,6 +1509,11 @@ body {
   font-weight: var(--me-weight-bold);
   color: var(--me-brand-navy);
   margin: 0 0 28px;
+}
+
+.contact-form-card__book {
+  display: inline-block;
+  margin-bottom: 28px;
 }
 
 .contact-form__group {

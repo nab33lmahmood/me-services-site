@@ -1,4 +1,5 @@
 import { DM_Serif_Display } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -14,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={dmSerifDisplay.variable}>{children}</body>
+      <body className={dmSerifDisplay.variable}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }

@@ -19,7 +19,7 @@ export default function Footer() {
             <Wordmark variant="footer" />
             <p className="footer__brand-tagline">Mindful Engagement</p>
             <p className="footer__brand-tagline">
-              ABN registered. Melbourne, Australia.
+              ABN 65 882 498 703. Melbourne, Australia.
             </p>
           </div>
 
