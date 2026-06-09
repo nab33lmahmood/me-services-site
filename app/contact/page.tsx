@@ -46,7 +46,7 @@ export default function ContactPage() {
                   href="https://outlook.office.com/bookwithme/user/25c56a4fa3284335a44e6074818ec6b2@mindful-engagement.com/meetingtype/919g0__r40qOZkbF6AvhhA2?anonymous&ismsaljsauthenabled&ep=mCardFromTile"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn--outline contact-form-card__book"
+                  className="btn btn--gold-cta contact-form-card__book"
                 >
                   Book a 15-minute call
                 </a>

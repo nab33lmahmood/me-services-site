@@ -1514,6 +1514,8 @@ body {
 .contact-form-card__book {
   display: inline-block;
   margin-bottom: 28px;
+  padding: 14px;
+  border: none;
 }
 
 .contact-form__group {
