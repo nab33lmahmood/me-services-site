@@ -43,12 +43,12 @@ export default function ContactPage() {
                 </h2>
 
                 <a
-                  href="https://outlook.office.com/bookwithme/user/25c56a4fa3284335a44e6074818ec6b2@mindful-engagement.com/meetingtype/919g0__r40qOZkbF6AvhhA2?anonymous&ismsaljsauthenabled&ep=mCardFromTile"
+                  href="https://outlook.office.com/bookwithme/user/25c56a4fa3284335a44e6074818ec6b2@mindful-engagement.com/meetingtype/sbLQPEl_bkC5_gWRxkILXw2?anonymous&ismsaljsauthenabled&ep=mcard"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn--gold-cta contact-form-card__book"
                 >
-                  Book a 15-minute call
+                  Book a discovery call
                 </a>
 
                 <form
