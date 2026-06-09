@@ -18,8 +18,10 @@ type ServiceSection = {
   pill: string
   heading: string
   body: string
-  bodySecondary: string
-  suited: string
+  bodySecondary?: string
+  suited?: string
+  price?: string
+  feeNote?: string
   cardHeading: string
   engagements: ServiceEngagement[]
   tags: string[]
@@ -155,6 +157,42 @@ const services: ServiceSection[] = [
     ],
     cardAccent: 'navy',
   },
+  {
+    eyebrow: 'Service four',
+    pill: 'Fixed fee service',
+    heading: 'Technology Health Check',
+    body: 'A focused two-hour review of your current technology setup. We tell you exactly what is working, what is at risk, and what to fix first. Delivered as a written report within 48 hours.',
+    price: '$650 fixed fee',
+    feeNote:
+      'Fee credited toward your first consulting engagement if you proceed.',
+    cardHeading: 'What is included',
+    engagements: [
+      {
+        label: 'Current technology stack assessment',
+        body: '',
+      },
+      {
+        label: 'Security and access risk review',
+        body: '',
+      },
+      {
+        label: 'Operational health: licences, renewals, vendor risks',
+        body: '',
+      },
+      {
+        label: 'Top three priorities ranked by risk and impact',
+        body: '',
+      },
+      {
+        label: 'Clear implementation path and next steps',
+        body: '',
+      },
+    ],
+    tags: [],
+    reversed: true,
+    bgWhite: true,
+    cardAccent: 'navy',
+  },
 ]
 
 const engagementModel: EngagementItem[] = [
@@ -194,17 +232,23 @@ function ServiceDetailCard({
             <span className="info-card__dash">-</span>
             {item.label}
           </p>
-          <p className="info-card__item-body">{item.body}</p>
+          {item.body ? (
+            <p className="info-card__item-body">{item.body}</p>
+          ) : null}
         </div>
       ))}
-      <hr className="info-card__divider" />
-      <div className="skill-tags">
-        {tags.map((tag) => (
-          <span key={tag} className="skill-tag">
-            {tag}
-          </span>
-        ))}
-      </div>
+      {tags.length > 0 ? (
+        <>
+          <hr className="info-card__divider" />
+          <div className="skill-tags">
+            {tags.map((tag) => (
+              <span key={tag} className="skill-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </>
+      ) : null}
     </div>
   )
 }
@@ -239,8 +283,20 @@ export default function ServicesPage() {
                 <span className="label-pill">{service.pill}</span>
                 <h2 className="service-heading">{service.heading}</h2>
                 <p className="section-body">{service.body}</p>
-                <p className="section-body">{service.bodySecondary}</p>
-                <p className="section-body--muted">{service.suited}</p>
+                {service.bodySecondary ? (
+                  <p className="section-body">{service.bodySecondary}</p>
+                ) : null}
+                {service.price ? (
+                  <p className="section-body section-body--price">
+                    {service.price}
+                  </p>
+                ) : null}
+                {service.feeNote ? (
+                  <p className="section-body--muted">{service.feeNote}</p>
+                ) : null}
+                {service.suited ? (
+                  <p className="section-body--muted">{service.suited}</p>
+                ) : null}
               </div>
               <div className="two-col__detail">
                 <ServiceDetailCard

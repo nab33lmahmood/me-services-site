@@ -991,6 +991,11 @@ body {
   margin-top: 16px;
 }
 
+.section-body--price {
+  font-weight: var(--me-weight-bold);
+  color: var(--me-brand-navy);
+}
+
 .section-body + .section-body {
   margin-top: 20px;
 }
