@@ -178,6 +178,18 @@ body {
   color: var(--me-white);
 }
 
+.btn--outline-gold {
+  background-color: transparent;
+  color: var(--me-brand-gold);
+  border: 2px solid var(--me-brand-gold);
+  font-weight: var(--me-weight-bold);
+}
+
+.btn--outline-gold:hover {
+  background-color: var(--me-brand-gold);
+  color: var(--me-ink-navy);
+}
+
 .hero__buttons .btn--outline {
   color: var(--me-white);
   border-color: var(--me-white-50);

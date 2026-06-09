@@ -66,11 +66,11 @@ export default function HomePage() {
                 href="https://outlook.office.com/bookwithme/user/25c56a4fa3284335a44e6074818ec6b2@mindful-engagement.com/meetingtype/919g0__r40qOZkbF6AvhhA2?anonymous&ismsaljsauthenabled&ep=mCardFromTile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--outline"
+                className="btn btn--outline-gold"
               >
-                Book a 15-minute call
+                Book a discovery call
               </a>
-              <Link href="/contact" className="btn btn--ghost">
+              <Link href="/contact" className="btn btn--outline-gold">
                 Get in touch
               </Link>
             </div>
