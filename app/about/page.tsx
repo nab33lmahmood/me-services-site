@@ -11,6 +11,8 @@ const principles = [
 
 const nabeelTags = ['MSP Practitioner', 'PRINCE2', 'ITIL 4', 'Azure', 'M365']
 
+const tayyabTags = ['Next.js', 'TypeScript', 'React', 'Node.js', 'PostgreSQL']
+
 const groupItems = [
   {
     label: 'ME Services',
@@ -145,7 +147,28 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <PlaceholderCard />
+            <div className="person-card">
+              <div className="person-card__avatar">TM</div>
+              <p className="person-card__name">Tayyab Mahmood</p>
+              <p className="person-card__role">Principal Consultant, Software Engineering</p>
+              <hr className="person-card__divider" />
+              <p className="person-card__bio">
+                A software engineer and solution architect specialising in scalable web
+                applications and modern technology stacks. Brings deep hands-on capability
+                across full-stack development, system design, and digital product delivery,
+                translating complex business requirements into reliable, high-performing
+                solutions. Works within the Mindful Engagement delivery team to support
+                clients through the full build lifecycle, from architecture and development
+                through to deployment and optimisation.
+              </p>
+              <div className="skill-tags">
+                {tayyabTags.map((tag) => (
+                  <span key={tag} className="skill-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
             <PlaceholderCard />
           </div>
         </ContentWrapper>
