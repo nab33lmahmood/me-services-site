@@ -557,6 +557,12 @@ body {
   }
 }
 
+@media (min-width: 1024px) {
+  .pillars__grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .pillar-card {
   background-color: var(--me-white);
   border-radius: var(--me-radius-lg);
