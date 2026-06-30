@@ -3,12 +3,19 @@ import ContentWrapper from '@/components/ContentWrapper'
 import Footer from '@/components/Footer'
 import Nav from '@/components/Nav'
 
+const trustItems = [
+  { label: 'Governance', title: 'Trustees always free' },
+  { label: 'Transparency', title: 'No per-donor fees' },
+  { label: 'Speed', title: 'Live today' },
+  { label: 'Efficiency', title: 'Time saved every month' },
+]
+
 export default function ProductsPage() {
   return (
     <>
       <Nav />
 
-      <section className="page-hero">
+      <section className="page-hero page-hero--compact">
         <ContentWrapper>
           <p className="eyebrow eyebrow--gold">Products</p>
           <h1 className="page-hero__heading">
@@ -22,32 +29,57 @@ export default function ProductsPage() {
         </ContentWrapper>
       </section>
 
-      <section className="me-group">
+      <section
+        className="section--off-white"
+        style={{
+          paddingTop: 'var(--me-space-6)',
+          paddingBottom: 'var(--me-space-4)',
+        }}
+      >
         <ContentWrapper>
-          <div className="me-group__grid">
-            <div className="group-card group-card--navy-accent">
+          <div className="pillars__grid pillars__grid--2col">
+            <div className="pillar-card pillar-card--navy-accent">
+              <img
+                src="/screenshots/kind-cloud/dashboard-multicurrency.png"
+                alt="ME Kind Cloud dashboard showing multi-currency chapter totals"
+                className="kind-cloud-feature__image"
+                style={{ marginBottom: 'var(--me-space-4)' }}
+              />
               <p className="eyebrow eyebrow--card">Charity operations</p>
-              <h3 className="group-card__title">ME Kind Cloud</h3>
-              <p className="group-card__body">
+              <h3 className="pillar-card__title">ME Kind Cloud</h3>
+              <p className="pillar-card__body">
                 Operations software for multi-chapter charities and welfare
                 organisations.
               </p>
-              <span className="status-pill status-pill--green">Live pilot</span>
+              <span className="status-pill status-pill--green">Live</span>
               <Link href="/products/kind-cloud" className="pillar-card__link">
                 Learn more &rarr;
               </Link>
             </div>
 
-            <div className="group-card group-card--gold-accent">
+            <div className="pillar-card pillar-card--gold-accent">
               <p className="eyebrow eyebrow--card">Operational health</p>
-              <h3 className="group-card__title">ME Pulse</h3>
-              <p className="group-card__body">
+              <h3 className="pillar-card__title">ME Pulse</h3>
+              <p className="pillar-card__body">
                 Operational health dashboard for senior leaders.
               </p>
               <span className="status-pill status-pill--amber">
-                In development
+                Early Access Soon
               </span>
             </div>
+          </div>
+        </ContentWrapper>
+      </section>
+
+      <section className="kind-cloud-trust-strip" aria-label="Product philosophy">
+        <ContentWrapper>
+          <div className="kind-cloud-trust-strip__grid">
+            {trustItems.map((item) => (
+              <div key={item.title} className="kind-cloud-trust-strip__item">
+                <p className="kind-cloud-trust-strip__label">{item.label}</p>
+                <p className="kind-cloud-trust-strip__value">{item.title}</p>
+              </div>
+            ))}
           </div>
         </ContentWrapper>
       </section>

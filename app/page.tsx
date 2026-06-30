@@ -78,7 +78,20 @@ export default function HomePage() {
         </ContentWrapper>
       </section>
 
-      <section className="pillars">
+      <section className="kind-cloud-trust-strip" aria-label="Key stats">
+        <ContentWrapper>
+          <div className="kind-cloud-trust-strip__grid">
+            {stats.map((stat) => (
+              <div key={stat.label} className="kind-cloud-trust-strip__item">
+                <p className="proof__number">{stat.number}+</p>
+                <p className="proof__label">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </ContentWrapper>
+      </section>
+
+      <section className="pillars pillars--compact">
         <ContentWrapper>
           <div className="pillars__header">
             <p className="eyebrow eyebrow--navy">What we do</p>
@@ -108,20 +121,46 @@ export default function HomePage() {
         </ContentWrapper>
       </section>
 
-      <section className="proof">
+      <section className="kind-cloud-feature kind-cloud-feature--prominent">
         <ContentWrapper>
-          <div className="proof__grid">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <p className="proof__number">{stat.number}+</p>
-                <p className="proof__label">{stat.label}</p>
+          <div className="two-col two-col--40-60">
+            <div className="two-col__content">
+              <p className="eyebrow eyebrow--gold">Featured product</p>
+              <h2 className="kind-cloud-feature__heading">ME Kind Cloud</h2>
+              <hr className="kind-cloud-feature__rule" />
+              <p className="kind-cloud-feature__subheading">
+                Operations software for multi-chapter charities and welfare
+                organisations.
+              </p>
+              <p className="kind-cloud-feature__body">
+                Built for how charities actually operate: donor management,
+                pledges, multi-currency chapters, and AI-assisted reporting in
+                one platform. Currently in active pilot with a UK-headquartered
+                welfare organisation operating chapters across Australia, the
+                UK, and Pakistan.
+              </p>
+              <div className="kind-cloud-feature__buttons">
+                <Link href="/products/kind-cloud" className="btn btn--gold-cta">
+                  See it in action
+                </Link>
+                <Link href="/contact" className="btn btn--secondary">
+                  Book a walkthrough
+                </Link>
               </div>
-            ))}
+            </div>
+
+            <div className="two-col__detail">
+              <img
+                src="/screenshots/kind-cloud/dashboard-multicurrency.png"
+                alt="ME Kind Cloud dashboard showing multi-currency chapter totals"
+                className="kind-cloud-feature__image"
+              />
+            </div>
           </div>
         </ContentWrapper>
       </section>
 
-      <section className="about-teaser">
+      <section className="about-teaser about-teaser--tight-cta">
         <ContentWrapper>
           <div className="about-teaser__grid">
             <div>
@@ -165,7 +204,7 @@ export default function HomePage() {
         </ContentWrapper>
       </section>
 
-      <section className="closing-cta">
+      <section className="closing-cta closing-cta--tight-top">
         <ContentWrapper>
           <div className="closing-cta__inner">
             <p className="eyebrow eyebrow--navy">Ready to talk</p>
@@ -212,8 +251,9 @@ export default function HomePage() {
               <p className="eyebrow eyebrow--card">SaaS products</p>
               <h3 className="group-card__title">ME Products</h3>
               <p className="group-card__body">
-                Operational health and donor engagement platforms built on the ME
-                philosophy. ME Pulse and ME Kind Cloud.
+                Operations software for multi-chapter charities and welfare
+                organisations. ME Kind Cloud is in active pilot. ME Pulse is in
+                development.
               </p>
               <span className="status-pill status-pill--amber">In development</span>
             </div>

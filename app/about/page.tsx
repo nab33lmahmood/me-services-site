@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import ContentWrapper from '@/components/ContentWrapper'
 import Footer from '@/components/Footer'
 import Nav from '@/components/Nav'
+import PrincipalCard from './PrincipalCard'
 
 const principles = [
   'Intentionality over busyness.',
@@ -12,6 +12,51 @@ const principles = [
 const nabeelTags = ['MSP Practitioner', 'PRINCE2', 'ITIL 4', 'Azure', 'M365']
 
 const tayyabTags = ['Next.js', 'TypeScript', 'React', 'Node.js', 'PostgreSQL']
+
+const shayanTags = [
+  'B2B Relationships',
+  'Account Management',
+  'Client Engagement',
+  'Commerce',
+]
+
+const principals = [
+  {
+    name: 'Nabeel Mahmood',
+    role: 'Founder and principal',
+    avatarImage: {
+      src: '/images/team/nabeel-mahmood.jpg',
+      alt: 'Nabeel Mahmood',
+    },
+    bio: [
+      "Twenty years in technology leadership taught me something most career paths never make explicit: the best work isn't the work that looks busiest, it's the work that's done with intention. I led programs across government, healthcare, insurance, and retail, including blue-chip experience at Motorola Software Group, governing portfolios of 150+ applications and budgets exceeding $20M. But the number that matters more is this: every team I led, I tried to leave more capable than I found it.",
+      "I founded Mindful Engagement because I kept seeing the same gap. Organisations don't fail from a lack of talent or effort, they fail when busyness quietly replaces clarity. ME Services exists to bring senior, hands-on technology leadership to organisations that need it done right, without the overhead, the hand-offs, or the junior delivery teams that large firms default to. This is the firm I always wanted to hire. So I built it.",
+    ],
+    tags: nabeelTags,
+  },
+  {
+    name: 'Tayyab Mahmood',
+    role: 'Principal Consultant, Software Engineering',
+    avatarImage: {
+      src: '/images/team/tayyab-mahmood.jpg',
+      alt: 'Tayyab Mahmood',
+    },
+    bio: [
+      'A software engineer and solution architect specialising in scalable web applications and modern technology stacks. Brings deep hands-on capability across full-stack development, system design, and digital product delivery, translating complex business requirements into reliable, high-performing solutions. Works within the Mindful Engagement delivery team to support clients through the full build lifecycle, from architecture and development through to deployment and optimisation.',
+    ],
+    tags: tayyabTags,
+  },
+  {
+    name: 'Shayan Amer',
+    role: 'Business relationship consultant, principal',
+    avatarInitials: 'SA',
+    accent: 'navy' as const,
+    bio: [
+      'A dynamic, relationship-first B2B professional with a track record across telecommunications, technology, and real estate. I focus on building genuine client relationships, understanding what organisations actually need, and making sure every engagement starts on the right footing. At Mindful Engagement, I lead client relationships and business development, bringing energy and a fresh commercial perspective to how we connect with the people we work for.',
+    ],
+    tags: shayanTags,
+  },
+]
 
 const groupItems = [
   {
@@ -27,24 +72,6 @@ const groupItems = [
     text: 'The book, the research, and the thought leadership.',
   },
 ]
-
-function PlaceholderCard() {
-  return (
-    <div className="person-card person-card--placeholder">
-      <div className="person-card__avatar">+</div>
-      <p className="person-card__name">Principal</p>
-      <p className="person-card__role">Joining 2026</p>
-      <p className="person-card__bio">
-        We are building a team of senior technology practitioners. If you have 15
-        or more years of technology leadership experience and share our
-        philosophy, we would like to talk.
-      </p>
-      <Link href="/contact" className="person-card__link">
-        Get in touch
-      </Link>
-    </div>
-  )
-}
 
 export default function AboutPage() {
   return (
@@ -62,7 +89,7 @@ export default function AboutPage() {
         </ContentWrapper>
       </section>
 
-      <section className="section--off-white section-pad">
+      <section className="section--off-white section-pad section-pad--tight-bottom">
         <ContentWrapper>
           <div className="two-col two-col--55-40">
             <div className="two-col__content">
@@ -115,7 +142,7 @@ export default function AboutPage() {
         </ContentWrapper>
       </section>
 
-      <section className="section--white section-pad">
+      <section className="section--white section-pad section-pad--tight-top">
         <ContentWrapper>
           <p className="eyebrow eyebrow--gold">Our people</p>
           <h2 className="section-heading">Our principals.</h2>
@@ -126,50 +153,9 @@ export default function AboutPage() {
           </p>
 
           <div className="people-grid">
-            <div className="person-card">
-              <div className="person-card__avatar">NM</div>
-              <p className="person-card__name">Nabeel Mahmood</p>
-              <p className="person-card__role">Founder and principal</p>
-              <hr className="person-card__divider" />
-              <p className="person-card__bio">
-                I founded Mindful Engagement after 20 years leading technology
-                programs across government, healthcare, insurance, and retail. I
-                have governed portfolios of 150+ applications, managed $20M+
-                budgets, and delivered programs that mattered. ME Services is the
-                firm I always wanted to hire.
-              </p>
-              <div className="skill-tags">
-                {nabeelTags.map((tag) => (
-                  <span key={tag} className="skill-tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="person-card">
-              <div className="person-card__avatar">TM</div>
-              <p className="person-card__name">Tayyab Mahmood</p>
-              <p className="person-card__role">Principal Consultant, Software Engineering</p>
-              <hr className="person-card__divider" />
-              <p className="person-card__bio">
-                A software engineer and solution architect specialising in scalable web
-                applications and modern technology stacks. Brings deep hands-on capability
-                across full-stack development, system design, and digital product delivery,
-                translating complex business requirements into reliable, high-performing
-                solutions. Works within the Mindful Engagement delivery team to support
-                clients through the full build lifecycle, from architecture and development
-                through to deployment and optimisation.
-              </p>
-              <div className="skill-tags">
-                {tayyabTags.map((tag) => (
-                  <span key={tag} className="skill-tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <PlaceholderCard />
+            {principals.map((principal) => (
+              <PrincipalCard key={principal.name} {...principal} />
+            ))}
           </div>
         </ContentWrapper>
       </section>

@@ -1,0 +1,18 @@
+---
+description: Validate app/globals.css after edits (brace balance)
+globs: app/globals.css
+alwaysApply: false
+---
+
+# globals.css edit checklist
+
+After any edit to `app/globals.css`, before marking the task complete:
+
+1. Run `npm run check:globals-css` and report the output (opening `{`, closing `}`, difference).
+2. If braces are unbalanced, fix the syntax error before proceeding. Do not declare the task complete.
+3. If the site loses styling globally but braces are balanced, clear the Next.js cache:
+   - Stop node processes
+   - Delete `.next`
+   - Restart `npm run dev`
+
+Do not rewrite working CSS when fixing brace issues. Change only what is needed to restore balance.

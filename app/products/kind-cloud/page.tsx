@@ -2,6 +2,7 @@ import Link from 'next/link'
 import ContentWrapper from '@/components/ContentWrapper'
 import Footer from '@/components/Footer'
 import Nav from '@/components/Nav'
+import ProductGalleryCarousel from './ProductGalleryCarousel'
 
 const features = [
   {
@@ -28,6 +29,13 @@ const features = [
     body: 'Generate board-ready reports and operational summaries from live data, reducing manual reconciliation across chapters and currencies.',
     accent: 'navy' as const,
   },
+]
+
+const valueItems = [
+  { label: 'Governance', title: 'Trustees always free' },
+  { label: 'Transparency', title: 'No per-donor fees' },
+  { label: 'Speed', title: 'Live today' },
+  { label: 'Efficiency', title: 'Time saved every month' },
 ]
 
 const contactHref = '/contact?subject=ME+Kind+Cloud+enquiry'
@@ -103,112 +111,134 @@ export default function KindCloudPage() {
     <>
       <Nav />
 
-      <section className="page-hero">
+      <section className="page-hero page-hero--kind-cloud">
         <ContentWrapper>
-          <p className="eyebrow eyebrow--gold">ME Kind Cloud</p>
-          <h1 className="page-hero__heading">
-            One platform. Every chapter. Every donor.
-          </h1>
-          <p className="page-hero__subheading">
-            ME Kind Cloud gives multi-chapter charities a single, real-time view
-            of donors, pledges, and operations, in every country they work in.
-          </p>
-          <div className="hero__buttons">
-            <Link href={contactHref} className="btn btn--gold-cta">
-              Get in touch
-            </Link>
+          <div className="kind-cloud-hero__grid">
+            <div className="kind-cloud-hero__content">
+              <p className="eyebrow eyebrow--gold">ME Kind Cloud</p>
+              <h1 className="page-hero__heading">
+                One platform. Every chapter. Every donor.
+              </h1>
+              <p className="page-hero__subheading">
+                ME Kind Cloud gives multi-chapter charities a single, real-time
+                view of donors, pledges, and operations, in every country they
+                work in.
+              </p>
+              <div className="hero__buttons">
+                <Link href={contactHref} className="btn btn--gold-cta">
+                  Get in touch
+                </Link>
+              </div>
+              <a href="#product-gallery" className="kind-cloud-hero__scroll-link">
+                See it in action
+              </a>
+            </div>
+
+            <div className="kind-cloud-hero__visual">
+              <div className="kind-cloud-browser-frame">
+                <div className="kind-cloud-browser-frame__chrome" aria-hidden="true">
+                  <span className="kind-cloud-browser-frame__dot" />
+                  <span className="kind-cloud-browser-frame__dot" />
+                  <span className="kind-cloud-browser-frame__dot" />
+                </div>
+                <img
+                  src="/screenshots/kind-cloud/dashboard-multicurrency.png"
+                  alt="ME Kind Cloud dashboard showing multi-currency chapter totals"
+                  className="kind-cloud-browser-frame__image"
+                />
+              </div>
+            </div>
           </div>
         </ContentWrapper>
       </section>
 
-      <section
-        className="section--off-white section-pad--md"
-        style={{
-          paddingTop: 'var(--me-space-10)',
-          paddingBottom: 'var(--me-space-6)',
-        }}
-      >
+      <section className="kind-cloud-trust-strip" aria-label="Why charities choose us">
         <ContentWrapper>
-          <p className="eyebrow eyebrow--gold">The problem</p>
-          <h2 className="section-heading">
-            Growth fractures donor visibility
-          </h2>
-          <p className="section-body">
-            When a charity grows from a single operation into multiple country
-            chapters, donor visibility starts to fracture. Teams work in separate
-            spreadsheets, currencies differ, and nobody has a reliable picture of
-            who gave what, where, and when.
+          <p className="kind-cloud-trust-strip__tagline">
+            Built different. Platform pricing that respects how charities
+            actually operate.
           </p>
-          <p className="section-body">
-            Coordination breaks down at the seams. Pledges go unfulfilled because
-            fulfilment tracking lives in one chapter but the donor relationship
-            lives in another. Leadership ends up reconciling reports instead of
-            running programmes.
-          </p>
-        </ContentWrapper>
-      </section>
-
-      <section
-        className="section--white section-pad--md"
-        style={{ paddingTop: 'var(--me-space-2)' }}
-      >
-        <ContentWrapper>
-          <p className="eyebrow eyebrow--gold">What it does</p>
-          <h2 className="section-heading">
-            Built for how charities actually operate.
-          </h2>
-
-          <div className="pillars__grid pillars__grid--2col">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className={`pillar-card pillar-card--${feature.accent}-accent`}
-              >
-                <p className="eyebrow eyebrow--card">{feature.eyebrow}</p>
-                <h3 className="pillar-card__title">{feature.title}</h3>
-                <p className="pillar-card__body">{feature.body}</p>
+          <div className="kind-cloud-trust-strip__grid">
+            {valueItems.map((item) => (
+              <div key={item.title} className="kind-cloud-trust-strip__item">
+                <p className="kind-cloud-trust-strip__label">{item.label}</p>
+                <p className="kind-cloud-trust-strip__value">{item.title}</p>
               </div>
             ))}
           </div>
         </ContentWrapper>
       </section>
 
-      <section className="product-gallery">
+      <section
+        className="section--off-white kind-cloud-combined"
+        style={{
+          paddingTop: 'var(--me-space-6)',
+          paddingBottom: 'var(--me-space-6)',
+        }}
+      >
+        <ContentWrapper>
+          <div className="two-col two-col--35-65">
+            <div className="two-col__content">
+              <p className="eyebrow eyebrow--gold">The problem</p>
+              <h2 className="kind-cloud-section-heading">
+                Growth fractures donor visibility
+              </h2>
+              <p className="kind-cloud-problem__body">
+                When a charity grows from a single operation into multiple
+                country chapters, donor visibility starts to fracture. Teams work
+                in separate spreadsheets, currencies differ, and nobody has a
+                reliable picture of who gave what, where, and when.
+              </p>
+              <p className="kind-cloud-problem__body">
+                Coordination breaks down at the seams. Pledges go unfulfilled
+                because fulfilment tracking lives in one chapter but the donor
+                relationship lives in another. Leadership ends up reconciling
+                reports instead of running programmes.
+              </p>
+            </div>
+
+            <div className="two-col__detail">
+              <p className="eyebrow eyebrow--gold">What it does</p>
+              <h2 className="kind-cloud-section-heading">
+                Built for how charities actually operate.
+              </h2>
+
+              <div className="kind-cloud-features-grid">
+                {features.map((feature) => (
+                  <div
+                    key={feature.title}
+                    className={`kind-cloud-feature-item kind-cloud-feature-item--${feature.accent}`}
+                  >
+                    <p className="kind-cloud-feature-item__eyebrow">
+                      {feature.eyebrow}
+                    </p>
+                    <h3 className="kind-cloud-feature-item__title">
+                      {feature.title}
+                    </h3>
+                    <p className="kind-cloud-feature-item__body">
+                      {feature.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </ContentWrapper>
+      </section>
+
+      <section
+        id="product-gallery"
+        className="product-gallery product-gallery--compact"
+      >
         <ContentWrapper>
           <p className="eyebrow eyebrow--gold">Product in action</p>
           <h2 className="product-gallery__heading">See it working</h2>
           <p className="product-gallery__subtitle">
-            Real screens from the live platform. Two charities, different
-            causes, one system.
+            Real screens from the live platform. Two charities, different causes,
+            one system.
           </p>
 
-          <div className="product-gallery__grid">
-            {galleryItems.map((item) => (
-              <article
-                key={item.filename}
-                className={`product-gallery__card${item.featured ? ' product-gallery__card--featured' : ''}`}
-              >
-                <span
-                  className={`product-gallery__org-tag product-gallery__org-tag--${item.orgVariant}`}
-                >
-                  {item.org}
-                </span>
-                <img
-                  src={`/screenshots/kind-cloud/${item.filename}`}
-                  alt={item.headline}
-                  className="product-gallery__image"
-                />
-                <div className="product-gallery__caption">
-                  <h3 className="product-gallery__caption-title">
-                    {item.headline}
-                  </h3>
-                  <p className="product-gallery__caption-body">
-                    {item.caption}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <ProductGalleryCarousel items={galleryItems} />
         </ContentWrapper>
       </section>
 
