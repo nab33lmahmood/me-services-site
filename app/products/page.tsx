@@ -37,7 +37,7 @@ export default function ProductsPage() {
         }}
       >
         <ContentWrapper>
-          <div className="pillars__grid pillars__grid--2col">
+          <div className="products-stack">
             <div className="pillar-card pillar-card--navy-accent">
               <img
                 src="/screenshots/kind-cloud/dashboard-multicurrency.png"
@@ -57,15 +57,25 @@ export default function ProductsPage() {
               </Link>
             </div>
 
-            <div className="pillar-card pillar-card--gold-accent">
-              <p className="eyebrow eyebrow--card">Operational health</p>
-              <h3 className="pillar-card__title">ME Pulse</h3>
-              <p className="pillar-card__body">
-                Operational health dashboard for senior leaders.
-              </p>
-              <span className="status-pill status-pill--amber">
-                Early Access Soon
-              </span>
+            <div className="product-listing product-listing--compact product-listing--gold-accent">
+              <div className="product-listing__header">
+                <p className="eyebrow eyebrow--card">Operational health</p>
+                <h3 className="product-listing__title">ME Pulse</h3>
+                <span className="status-pill status-pill--amber">
+                  Early Access Soon
+                </span>
+              </div>
+              <div className="product-listing__detail">
+                <p className="product-listing__body">
+                  Most tools ask what you need to do. ME Pulse asks what must
+                  always be true.
+                </p>
+                <p className="product-listing__body">
+                  A weekly fifteen-minute check across the domains that matter,
+                  so the things that quietly degrade get caught while they&apos;re
+                  still small.
+                </p>
+              </div>
             </div>
           </div>
         </ContentWrapper>

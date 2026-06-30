@@ -577,6 +577,18 @@ body {
   }
 }
 
+.pillars__grid--auto-height {
+  align-items: start;
+}
+
+.pillars__grid--auto-height .pillar-card {
+  height: auto;
+}
+
+.pillars__grid--auto-height .pillar-card__body {
+  flex-grow: 0;
+}
+
 .pillar-card {
   background-color: var(--me-white);
   border-radius: var(--me-radius-lg);
@@ -637,8 +649,88 @@ body {
   text-decoration: none;
 }
 
+.pillar-card .status-pill {
+  align-self: flex-start;
+  width: fit-content;
+}
+
 .pillar-card:hover .pillar-card__link {
   text-decoration: underline;
+}
+
+/* ── Products overview stack ─────────────────────────────── */
+
+.products-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--me-space-4);
+}
+
+.product-listing--compact {
+  background-color: var(--me-white);
+  border: 1px solid var(--me-border);
+  border-radius: var(--me-radius-lg);
+  padding: var(--me-space-5) var(--me-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--me-space-4);
+}
+
+@media (min-width: 768px) {
+  .product-listing--compact {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--me-space-8);
+    padding: var(--me-space-5) var(--me-space-8);
+  }
+}
+
+.product-listing--gold-accent {
+  border-top: 4px solid var(--me-brand-gold);
+}
+
+.product-listing__header {
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .product-listing__header {
+    width: 220px;
+  }
+}
+
+.product-listing__title {
+  font-family: var(--me-font);
+  font-size: 17px;
+  font-weight: var(--me-weight-bold);
+  color: var(--me-brand-navy);
+  margin: 8px 0 0;
+}
+
+.product-listing__header .status-pill {
+  margin-top: 10px;
+}
+
+.product-listing__detail {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-listing__body {
+  font-family: var(--me-font);
+  font-size: 14px;
+  font-weight: var(--me-weight-regular);
+  color: var(--me-charcoal);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.product-listing__body + .product-listing__body {
+  margin-top: var(--me-space-3);
+}
+
+.product-listing__detail .pillar-card__link {
+  margin-top: var(--me-space-3);
 }
 
 /* ── Kind Cloud feature (homepage) ─────────────────────────── */
