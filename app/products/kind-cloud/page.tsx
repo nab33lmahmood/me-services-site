@@ -32,6 +32,72 @@ const features = [
 
 const contactHref = '/contact?subject=ME+Kind+Cloud+enquiry'
 
+const galleryItems = [
+  {
+    filename: 'dashboard-multicurrency.png',
+    featured: true,
+    org: 'Sabeel Foundation',
+    orgVariant: 'sabeel' as const,
+    headline: 'One view across every chapter and currency',
+    caption:
+      'AU, GB, and PK chapters consolidate into a single converted total, with source and reach breakdowns updating live.',
+  },
+  {
+    filename: 'home-modules.png',
+    featured: false,
+    org: 'ME. Kindwell',
+    orgVariant: 'kindwell' as const,
+    headline: 'Every module, one workspace',
+    caption:
+      'Appeals, donors, events, pledges, and AI reporting, all reachable from a single sidebar.',
+  },
+  {
+    filename: 'appeals-list.png',
+    featured: false,
+    org: 'Sabeel Foundation',
+    orgVariant: 'sabeel' as const,
+    headline: 'Campaigns managed by chapter, visible from the centre',
+    caption:
+      'Each appeal shows progress, top donor, and recent activity, with an AI-generated performance summary on demand.',
+  },
+  {
+    filename: 'donor-detail.png',
+    featured: false,
+    org: 'Sabeel Foundation',
+    orgVariant: 'sabeel' as const,
+    headline: 'A complete donor relationship, not just a transaction',
+    caption:
+      'Giving history, activity log, and AI-suggested next actions for every donor.',
+  },
+  {
+    filename: 'ai-impact-report.png',
+    featured: false,
+    org: 'ME. Kindwell',
+    orgVariant: 'kindwell' as const,
+    headline: 'Board-ready reports generated in seconds',
+    caption:
+      'Select a chapter and date range. The narrative, key figures, and insights write themselves from live data.',
+  },
+  {
+    filename: 'pledges.png',
+    featured: false,
+    org: 'ME. Kindwell',
+    orgVariant: 'kindwell' as const,
+    headline: 'Pledges tracked from commitment to fulfilment',
+    caption:
+      'See exactly what is outstanding, by donor, by appeal, by chapter, with fulfilment progress in real time.',
+  },
+  {
+    filename: 'charity-settings.png',
+    featured: true,
+    org: 'ME. Kindwell',
+    orgVariant: 'kindwell' as const,
+    headline: 'Configured to how your charity actually runs',
+    caption:
+      'Chapters, accounting codes, interaction types, chapter roles, and exchange rates, all in one settings area. Built so any charity can adapt the platform to their own structure.',
+  },
+]
+
 export default function KindCloudPage() {
   return (
     <>
@@ -102,6 +168,45 @@ export default function KindCloudPage() {
                 <h3 className="pillar-card__title">{feature.title}</h3>
                 <p className="pillar-card__body">{feature.body}</p>
               </div>
+            ))}
+          </div>
+        </ContentWrapper>
+      </section>
+
+      <section className="product-gallery">
+        <ContentWrapper>
+          <p className="eyebrow eyebrow--gold">Product in action</p>
+          <h2 className="product-gallery__heading">See it working</h2>
+          <p className="product-gallery__subtitle">
+            Real screens from the live platform. Two charities, different
+            causes, one system.
+          </p>
+
+          <div className="product-gallery__grid">
+            {galleryItems.map((item) => (
+              <article
+                key={item.filename}
+                className={`product-gallery__card${item.featured ? ' product-gallery__card--featured' : ''}`}
+              >
+                <span
+                  className={`product-gallery__org-tag product-gallery__org-tag--${item.orgVariant}`}
+                >
+                  {item.org}
+                </span>
+                <img
+                  src={`/screenshots/kind-cloud/${item.filename}`}
+                  alt={item.headline}
+                  className="product-gallery__image"
+                />
+                <div className="product-gallery__caption">
+                  <h3 className="product-gallery__caption-title">
+                    {item.headline}
+                  </h3>
+                  <p className="product-gallery__caption-body">
+                    {item.caption}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </ContentWrapper>
