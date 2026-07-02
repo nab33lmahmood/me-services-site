@@ -1,6 +1,10 @@
 'use client'
 
+import { type FormEvent } from 'react'
 import { useSearchParams } from 'next/navigation'
+
+const LEAD_CAPTURE_URL =
+  'https://leads.mindful-engagement.com/api/public/lead-capture'
 
 export default function ContactForm() {
   const searchParams = useSearchParams()
@@ -8,9 +12,45 @@ export default function ContactForm() {
   const subjectValue = subjectParam ?? 'New enquiry via ME Services'
   const isProductEnquiry = Boolean(subjectParam)
 
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    const form = event.currentTarget
+    const data = new FormData(form)
+
+    void fetch(LEAD_CAPTURE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: String(data.get('name') ?? ''),
+        email: String(data.get('email') ?? ''),
+        message: String(data.get('message') ?? ''),
+        ...(subjectParam ? { subject: subjectParam } : {}),
+        honeypot: String(data.get('website') ?? ''),
+      }),
+      keepalive: true,
+    }).catch((error) => {
+      console.error('Lead capture failed:', error)
+    })
+  }
+
   return (
-    <form action="https://formspree.io/f/mrevboep" method="POST">
+    <form
+      action="https://formspree.io/f/mrevboep"
+      method="POST"
+      onSubmit={handleSubmit}
+      className="contact-form"
+    >
       <input type="hidden" name="_subject" value={subjectValue} />
+
+      <div className="visually-hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
 
       <div className="contact-form__group">
         <label htmlFor="name" className="contact-form__label">
