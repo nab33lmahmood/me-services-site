@@ -15,6 +15,8 @@ export default function ContactForm() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     const form = event.currentTarget
     const data = new FormData(form)
+    const area = String(data.get('service') ?? '').trim()
+    const organisation = String(data.get('organisation') ?? '').trim()
 
     void fetch(LEAD_CAPTURE_URL, {
       method: 'POST',
@@ -24,6 +26,8 @@ export default function ContactForm() {
         email: String(data.get('email') ?? ''),
         message: String(data.get('message') ?? ''),
         ...(subjectParam ? { subject: subjectParam } : {}),
+        ...(area ? { area } : {}),
+        ...(organisation ? { organisation } : {}),
         honeypot: String(data.get('website') ?? ''),
       }),
       keepalive: true,
@@ -105,6 +109,9 @@ export default function ContactForm() {
         >
           <option value="" disabled>
             Select an area (optional)
+          </option>
+          <option value="kindcloud-demo">
+            ME Kind Cloud demo (charity CRM)
           </option>
           <option value="advisory">Technology Advisory</option>
           <option value="transformation">Digital Transformation</option>
