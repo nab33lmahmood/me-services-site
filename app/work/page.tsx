@@ -1,51 +1,67 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentWrapper from '@/components/ContentWrapper'
 import Footer from '@/components/Footer'
 import Nav from '@/components/Nav'
 
-const workCards = [
+export const metadata: Metadata = {
+  title: 'Our work | Mindful Engagement',
+  description:
+    'Two decades of enterprise transformation, portfolio governance, AI automation, and delivery leadership across government, healthcare, insurance, and retail.',
+}
+
+const capabilityPillars = [
   {
-    sector: 'Government / health',
-    title: 'Enterprise M365 Transformation',
-    description:
-      'Directed enterprise M365 Modern Workspace transformation across 30+ organisational units within a large government health network. Migrated 2.3M+ files, established statewide adoption benchmarks, and delivered device programs for two consecutive years. Microsoft contract negotiations managed at the principal level.',
-    outcome: '2.3M+ files migrated',
+    label: 'Capability one',
+    heading: 'Enterprise transformation at scale',
+    body: "Led Modern Workspace and platform transformation across 30+ organisational units within one of Australia's largest public networks, migrating millions of files and setting adoption benchmarks that held across clinical and administrative environments.",
+    chips: ['2.3M+ files migrated', '30+ units'],
   },
   {
-    sector: 'Health insurance',
-    title: 'Application Portfolio Governance',
-    description:
-      'Governed a portfolio of 150+ enterprise applications for a major health insurer, embedding cloud-native, API-first, and event-driven architecture patterns. Built the technology function from a single resource to a full multidisciplinary team. Achieved 95% SLA compliance and reduced MTTR by 30%. Microsoft Dynamics 365 formed a core part of the application portfolio, with governance and roadmap ownership across the platform.',
-    outcome: '150+ apps governed',
+    label: 'Capability two',
+    heading: 'Portfolio and vendor governance',
+    body: 'Governed enterprise application estates of 150+ systems, embedding cloud-native, API-first, and event-driven architecture. Managed multimillion-dollar technology budgets across major vendor relationships, lifting service performance and commercial discipline.',
+    chips: ['150+ apps governed', '95% SLA compliance', 'MTTR reduced 30%'],
   },
   {
-    sector: 'Retail / enterprise',
-    title: 'Enterprise Workflow Automation',
-    description:
-      'Delivered a large-scale workflow automation platform enabling millions of automated transactions annually across national retail operations. Led a multi-million-dollar commercial agreement transformation across nine business departments, delivering governance and operational transition models for enterprise-wide adoption.',
-    outcome: 'Millions of transactions automated',
+    label: 'Capability three',
+    heading: 'AI and intelligent automation',
+    body: 'Co-designed enterprise AI frameworks and guardrails, deploying agents across contact centre, service desk, and customer journey platforms. Delivered workflow automation processing millions of transactions a year, and built two AI-native SaaS products end to end.',
+    chips: [
+      'Enterprise AI framework',
+      'Millions of transactions automated',
+      '2 SaaS products built',
+    ],
   },
   {
-    sector: 'Technology / law enforcement',
-    title: 'Law Enforcement Platform Delivery',
-    description:
-      'Delivered NetRMS law enforcement systems across multiple US states for a global blue-chip technology organisation. Led cross-border Australian and US delivery teams, managing complex stakeholder environments across government agencies and achieving 95% stakeholder satisfaction on program delivery.',
-    outcome: '95% stakeholder satisfaction',
-  },
-  {
-    sector: 'CRM / enterprise platforms',
-    title: 'Dynamics 365 CRM and model-driven apps',
-    description:
-      'Delivered Microsoft Dynamics 365 CRM implementation and model-driven application development for an enterprise client. Covered platform architecture, data modelling, business process automation, and stakeholder adoption. Integrated with existing enterprise systems to create a unified operational platform across the organisation.',
-    outcome: 'Enterprise CRM delivered',
+    label: 'Capability four',
+    heading: 'Delivery and team leadership',
+    body: 'Delivered mission-critical programs under urgent timeframes, including national health response systems, across complex cross-border environments. Grew technology functions from a single resource to structured multidisciplinary teams.',
+    chips: [
+      '0% voluntary attrition',
+      '+20% delivery capacity',
+      '95% stakeholder satisfaction',
+    ],
   },
 ]
 
-const stats = [
-  { number: '20+', label: 'Years of experience' },
-  { number: '$20M+', label: 'Portfolio managed' },
-  { number: '150+', label: 'Enterprise apps governed' },
-  { number: '2.3M+', label: 'Files migrated' },
+const metrics = [
+  { figure: '20+', label: 'Years of experience' },
+  { figure: '$20M+', label: 'Portfolio managed' },
+  { figure: '150+', label: 'Enterprise apps governed' },
+  { figure: '2.3M+', label: 'Files migrated' },
+  { figure: '95%', label: 'SLA compliance' },
+  { figure: '0%', label: 'Voluntary attrition' },
+]
+
+const sectors = [
+  'Government',
+  'Healthcare',
+  'Insurance',
+  'Telecommunications',
+  'Retail',
+  'Law enforcement',
+  'Not-for-profit',
 ]
 
 export default function WorkPage() {
@@ -55,11 +71,12 @@ export default function WorkPage() {
 
       <section className="page-hero">
         <ContentWrapper>
-          <p className="eyebrow eyebrow--gold">Our work</p>
-          <h1 className="page-hero__heading">Selected engagements.</h1>
-          <p className="page-hero__subheading">
-            A selection of programs and initiatives delivered by our principals
-            across government, healthcare, and enterprise.
+          <p className="eyebrow eyebrow--light-gold">Our work</p>
+          <h1 className="page-hero__heading">Two decades of delivery.</h1>
+          <p className="page-hero__subheading page-hero__subheading--work">
+            The programs and platforms our principals have led across
+            government, healthcare, insurance, telecommunications, and retail.
+            Described by capability and outcome.
           </p>
         </ContentWrapper>
       </section>
@@ -67,48 +84,82 @@ export default function WorkPage() {
       <section className="confidentiality-banner">
         <ContentWrapper>
           <p className="confidentiality-banner__text">
-            Client confidentiality is respected in all cases. Organisations and
-            outcomes are described at the level appropriate for public
-            disclosure.
+            Client confidentiality is respected in all cases. Work is described
+            at the level appropriate for public disclosure.
           </p>
         </ContentWrapper>
       </section>
 
-      <section className="section--off-white section-pad--sm">
+      <section className="section--off-white section-pad--about">
         <ContentWrapper>
-          <div className="work-grid md:grid-cols-2 lg:grid-cols-3">
-            {workCards.map((card) => (
-              <div key={card.title} className="work-card">
-                <p className="work-card__sector">{card.sector}</p>
-                <h2 className="work-card__title">{card.title}</h2>
-                <p className="work-card__description">{card.description}</p>
-                <hr className="work-card__divider" />
-                <span className="outcome-pill">{card.outcome}</span>
-              </div>
-            ))}
-          </div>
+          <p className="eyebrow eyebrow--gold">The track record</p>
+          <p className="work-intro__body">
+            For twenty years, our principals have led the work that decides
+            whether an organisation&apos;s technology becomes an asset or a
+            liability. Enterprise transformation, $20M+ program portfolios,
+            application estates of 150+ systems, and mission-critical platforms
+            delivered when failure was not an option.
+          </p>
+          <p className="work-intro__sub">
+            The engagements below are grouped by capability. Client identities
+            and specific program names are held in confidence.
+          </p>
 
-          <div className="work-footer">
-            <p className="work-footer__note">
-              Additional case studies in preparation. Speak with us directly for
-              sector-specific references.
-            </p>
-            <Link href="/contact" className="work-footer__link">
-              Get in touch
-            </Link>
+          <div className="work-pillars-grid">
+            {capabilityPillars.map((pillar) => (
+              <article key={pillar.label} className="work-pillar-card">
+                <p className="work-pillar-card__label">{pillar.label}</p>
+                <h2 className="work-pillar-card__heading">{pillar.heading}</h2>
+                <p className="work-pillar-card__body">{pillar.body}</p>
+                <div className="work-pillar-card__chips">
+                  {pillar.chips.map((chip) => (
+                    <span key={chip} className="work-proof-chip">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </ContentWrapper>
       </section>
 
-      <section className="proof">
+      <section className="work-metrics" aria-label="Key metrics">
         <ContentWrapper>
-          <div className="proof__grid">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <p className="proof__number">{stat.number}</p>
-                <p className="proof__label">{stat.label}</p>
+          <div className="work-metrics__grid">
+            {metrics.map((metric) => (
+              <div key={metric.label}>
+                <p className="work-metrics__figure">{metric.figure}</p>
+                <p className="work-metrics__label">{metric.label}</p>
               </div>
             ))}
+          </div>
+        </ContentWrapper>
+      </section>
+
+      <section className="section--off-white section-pad--about work-sectors">
+        <ContentWrapper>
+          <p className="eyebrow eyebrow--gold">Sectors served</p>
+          <div className="work-sectors__chips">
+            {sectors.map((sector) => (
+              <span key={sector} className="work-sector-chip">
+                {sector}
+              </span>
+            ))}
+          </div>
+        </ContentWrapper>
+      </section>
+
+      <section className="work-cta">
+        <ContentWrapper>
+          <p className="work-cta__text">
+            Sector-specific references and deeper case detail available on
+            request under confidentiality.
+          </p>
+          <div className="work-cta__button">
+            <Link href="/contact" className="btn btn--primary">
+              Speak with us
+            </Link>
           </div>
         </ContentWrapper>
       </section>

@@ -1,26 +1,40 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentWrapper from '@/components/ContentWrapper'
 import Footer from '@/components/Footer'
 import Nav from '@/components/Nav'
 
-const pillars = [
+export const metadata: Metadata = {
+  title: 'Mindful Engagement | Technology advisory and products',
+  description:
+    'A technology group that advises leaders, delivers complex programs, and builds the software organisations run on. Board-level thinking, hands-on delivery.',
+}
+
+type ServiceIconType = 'lightbulb' | 'cycle' | 'check'
+
+const serviceCards: {
+  icon: ServiceIconType
+  tag: string
+  title: string
+  body: string
+}[] = [
   {
-    eyebrow: 'Advisory',
+    icon: 'lightbulb',
+    tag: 'Advisory',
     title: 'Technology Advisory',
-    body: 'Director-level technology advisory for boards, executives, and senior leadership teams. Strategy, roadmaps, vendor governance, and architecture decisions without the overhead of a full-time hire.',
-    accent: 'gold' as const,
+    body: 'Director-level advisory for boards, executives, and senior leaders. Strategy, roadmaps, vendor governance, and architecture, without the overhead of a full-time hire.',
   },
   {
-    eyebrow: 'Transformation',
+    icon: 'cycle',
+    tag: 'Transformation',
     title: 'Digital Transformation',
     body: 'End-to-end delivery of complex digital programs. Business applications, enterprise platforms, M365, cloud migration, and operational uplift. From strategy through to working systems.',
-    accent: 'navy' as const,
   },
   {
-    eyebrow: 'Delivery',
+    icon: 'check',
+    tag: 'Delivery',
     title: 'Program Delivery',
     body: 'Senior program and project leadership for technology initiatives that need to land. Governance, stakeholder management, vendor oversight, and delivery discipline at scale.',
-    accent: 'gold' as const,
   },
 ]
 
@@ -31,15 +45,53 @@ const stats = [
   { number: '2.3M', label: 'Files migrated' },
 ]
 
-const credentials = [
-  'Master of Engineering',
-  '(IT and Telecommunications)',
+const principalCredentials = [
+  'Master of Engineering (IT and Telecommunications)',
   'Graduate Certificate in Business Administration',
   'MSP Practitioner',
   'PRINCE2 Practitioner',
   'ITIL 4 Foundation and Leader',
   'Azure, M365, Power Platform',
 ]
+
+const principalStats = [
+  { figure: '20+', label: 'Years senior' },
+  { figure: '$20M+', label: 'Portfolio' },
+  { figure: '150+', label: 'Apps governed' },
+]
+
+function ServiceIcon({ type }: { type: ServiceIconType }) {
+  return (
+    <svg
+      className="service-card__icon-svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      {type === 'lightbulb' && (
+        <>
+          <path d="M9 18h6" />
+          <path d="M10 21h4" />
+          <path d="M12 3a6 6 0 0 0-4 10.5c.5.5 1 1.2 1 2.5h6c0-1.3.5-2 1-2.5A6 6 0 0 0 12 3z" />
+        </>
+      )}
+      {type === 'cycle' && (
+        <>
+          <path d="M21 12a9 9 0 0 1-9 9 9 9 0 0 1-7-3.3" />
+          <path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 7 3.3" />
+          <path d="M19 3v4h-4" />
+          <path d="M5 21v-4h4" />
+        </>
+      )}
+      {type === 'check' && (
+        <>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M8 12l3 3 5-6" />
+        </>
+      )}
+    </svg>
+  )
+}
 
 export default function HomePage() {
   return (
@@ -49,29 +101,23 @@ export default function HomePage() {
       <section className="hero">
         <ContentWrapper>
           <div className="hero__inner">
-            <p className="eyebrow eyebrow--gold">Technology consultancy</p>
+            <p className="eyebrow eyebrow--light-gold">
+              Know what&apos;s healthy. Fix what&apos;s not.
+            </p>
             <h1 className="hero__heading">
-              Senior technology leadership, without the large-firm overhead.
+              We think at board level. We build at the coalface.
             </h1>
             <p className="hero__subheading">
-              Mindful Engagement brings director-level thinking and hands-on
-              delivery to organisations that need it done right. Strategy
-              through to working systems. No hand-offs. No juniors.
+              A technology group. We advise leaders, deliver complex programs,
+              and build the software organisations run on. Board-level thinking,
+              hands-on delivery, no large-firm overhead.
             </p>
             <div className="hero__buttons">
-              <Link href="/services" className="btn btn--gold-cta">
-                See our services
+              <Link href="/about" className="btn btn--gold-cta">
+                Explore the group
               </Link>
-              <a
-                href="https://outlook.office.com/bookwithme/user/25c56a4fa3284335a44e6074818ec6b2@mindful-engagement.com/meetingtype/919g0__r40qOZkbF6AvhhA2?anonymous&ismsaljsauthenabled&ep=mCardFromTile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn--outline-gold"
-              >
-                Book a discovery call
-              </a>
-              <Link href="/contact" className="btn btn--outline-gold">
-                Get in touch
+              <Link href="/contact" className="btn btn--ghost">
+                Book a conversation
               </Link>
             </div>
           </div>
@@ -91,32 +137,49 @@ export default function HomePage() {
         </ContentWrapper>
       </section>
 
-      <section className="pillars pillars--compact">
+      <section id="me-group" className="me-group">
         <ContentWrapper>
-          <div className="pillars__header">
-            <p className="eyebrow eyebrow--navy">What we do</p>
-            <h2 className="pillars__heading">Three ways we help</h2>
-            <hr className="pillars__rule" />
-            <p className="pillars__subheading">
-              Three service lines. All grounded in 20 years of senior technology
-              delivery.
-            </p>
-          </div>
+          <p className="eyebrow eyebrow--navy">The ME group</p>
+          <h2 className="me-group__heading">More than a consultancy.</h2>
+          <hr className="me-group__rule" />
+          <p className="me-group__body">
+            Three divisions, one philosophy: intentionality over busyness. We
+            build the services, products, and thinking that help organisations
+            operate with clarity.
+          </p>
 
-          <div className="pillars__grid">
-            {pillars.map((pillar) => (
-              <div
-                key={pillar.title}
-                className={`pillar-card pillar-card--${pillar.accent}-accent`}
-              >
-                <p className="eyebrow eyebrow--card">{pillar.eyebrow}</p>
-                <h3 className="pillar-card__title">{pillar.title}</h3>
-                <p className="pillar-card__body">{pillar.body}</p>
-                <Link href="/services" className="pillar-card__link">
-                  Learn more &rarr;
-                </Link>
-              </div>
-            ))}
+          <div className="me-group__grid">
+            <div className="group-card group-card--navy-accent">
+              <p className="eyebrow eyebrow--card">Consultancy</p>
+              <h3 className="group-card__title">ME Services</h3>
+              <p className="group-card__body">
+                Technology advisory, digital transformation, and program delivery
+                for mid-market organisations.
+              </p>
+              <span className="status-pill status-pill--green">Now open</span>
+            </div>
+
+            <div className="group-card group-card--gold-accent">
+              <p className="eyebrow eyebrow--card">SaaS products</p>
+              <h3 className="group-card__title">ME Products</h3>
+              <p className="group-card__body">
+                Operations software for charities and welfare organisations. ME
+                Kind Cloud is live. ME Pulse in development.
+              </p>
+              <span className="status-pill status-pill--green">Live</span>
+            </div>
+
+            <div className="group-card group-card--navy-accent">
+              <p className="eyebrow eyebrow--card">Thought leadership</p>
+              <h3 className="group-card__title">ME Content</h3>
+              <p className="group-card__body">
+                The book, the thinking, and the LinkedIn content that sits behind
+                everything we build.
+              </p>
+              <span className="status-pill status-pill--neutral">
+                In progress
+              </span>
+            </div>
           </div>
         </ContentWrapper>
       </section>
@@ -129,15 +192,16 @@ export default function HomePage() {
               <h2 className="kind-cloud-feature__heading">ME Kind Cloud</h2>
               <hr className="kind-cloud-feature__rule" />
               <p className="kind-cloud-feature__subheading">
-                Operations software for multi-chapter charities and welfare
-                organisations.
+                Operations software for multi-chapter charities.
               </p>
               <p className="kind-cloud-feature__body">
-                Built for how charities actually operate: donor management,
-                pledges, multi-currency chapters, and AI-assisted reporting in
-                one platform. Currently in active pilot with a UK-headquartered
-                welfare organisation operating chapters across Australia, the
-                UK, and Pakistan.
+                Donors, pledges, multi-currency chapters, and AI-assisted
+                reporting in one platform. Built for how charities actually
+                operate.
+              </p>
+              <p className="kind-cloud-feature__highlight">
+                Live now, with growing interest from charities using AI to cut
+                the load of admin and reporting.
               </p>
               <div className="kind-cloud-feature__buttons">
                 <Link href="/products/kind-cloud" className="btn btn--gold-cta">
@@ -160,7 +224,37 @@ export default function HomePage() {
         </ContentWrapper>
       </section>
 
-      <section className="about-teaser about-teaser--tight-cta">
+      <section className="pillars pillars--compact">
+        <ContentWrapper>
+          <div className="pillars__header">
+            <p className="eyebrow eyebrow--navy">What we do</p>
+            <h2 className="pillars__heading">Three ways we help</h2>
+            <hr className="pillars__rule" />
+            <p className="pillars__subheading">
+              Three service lines, all grounded in 20 years of senior technology
+              delivery.
+            </p>
+          </div>
+
+          <div className="pillars__grid">
+            {serviceCards.map((card) => (
+              <article key={card.title} className="service-card">
+                <div className="service-card__icon-tile">
+                  <ServiceIcon type={card.icon} />
+                </div>
+                <p className="service-card__tag">{card.tag}</p>
+                <h3 className="service-card__title">{card.title}</h3>
+                <p className="service-card__body">{card.body}</p>
+                <Link href="/services" className="service-card__link">
+                  Learn more &rarr;
+                </Link>
+              </article>
+            ))}
+          </div>
+        </ContentWrapper>
+      </section>
+
+      <section className="about-teaser about-teaser--compact">
         <ContentWrapper>
           <div className="about-teaser__grid">
             <div>
@@ -170,14 +264,13 @@ export default function HomePage() {
               </h2>
               <p className="about-teaser__body">
                 Mindful Engagement is a technology group built by practitioners.
-                We bring director-level technology leadership to mid-market
-                organisations without the overhead of a large firm. We think at
-                board level and we deliver at the coalface.
+                We bring director-level leadership to mid-market organisations
+                without the overhead of a large firm. We think at board level
+                and we deliver at the coalface.
               </p>
               <p className="about-teaser__body">
                 Built on 20 years of senior technology leadership across
-                government, healthcare, insurance, and retail. $20M+ portfolios
-                managed. 150+ enterprise applications governed.
+                government, healthcare, insurance, and retail.
               </p>
               <Link href="/about" className="btn btn--secondary about-teaser__cta">
                 Meet our people
@@ -185,26 +278,37 @@ export default function HomePage() {
             </div>
 
             <div className="about-teaser__credentials">
-              <h3 className="about-teaser__credentials-heading">What our principals bring</h3>
-              <ul className="about-teaser__credentials-list">
-                {credentials.map((item) => (
-                  <li
-                    key={item}
-                    className={`about-teaser__credentials-item${item.startsWith('(') ? ' about-teaser__credentials-item--continuation' : ''}`}
-                  >
-                    {!item.startsWith('(') && (
-                      <span className="about-teaser__credentials-dash">-</span>
-                    )}
+              <h3 className="about-teaser__credentials-heading">
+                What our principals bring
+              </h3>
+              <ul className="about-teaser__credentials-grid">
+                {principalCredentials.map((item) => (
+                  <li key={item} className="about-teaser__credentials-item">
                     {item}
                   </li>
                 ))}
               </ul>
+              <div className="about-teaser__credentials-stats">
+                {principalStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="about-teaser__credentials-stat"
+                  >
+                    <p className="about-teaser__credentials-figure">
+                      {stat.figure}
+                    </p>
+                    <p className="about-teaser__credentials-label">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </ContentWrapper>
       </section>
 
-      <section className="closing-cta closing-cta--tight-top">
+      <section className="closing-cta closing-cta--compact">
         <ContentWrapper>
           <div className="closing-cta__inner">
             <p className="eyebrow eyebrow--navy">Ready to talk</p>
@@ -219,53 +323,6 @@ export default function HomePage() {
               <Link href="/contact" className="btn btn--primary">
                 Book a conversation
               </Link>
-            </div>
-          </div>
-        </ContentWrapper>
-      </section>
-
-      <section className="me-group">
-        <ContentWrapper>
-          <p className="eyebrow eyebrow--navy">The ME group</p>
-          <h2 className="me-group__heading">
-            Mindful Engagement is more than a consultancy.
-          </h2>
-          <p className="me-group__body">
-            We build the services, products, and thinking that help organisations
-            and leaders operate with clarity. ME Services is one part of a broader
-            group built on a single philosophy: intentionality over busyness.
-          </p>
-
-          <div className="me-group__grid">
-            <div className="group-card group-card--navy-accent">
-              <p className="eyebrow eyebrow--card">Consultancy</p>
-              <h3 className="group-card__title">ME Services</h3>
-              <p className="group-card__body">
-                Technology advisory, digital transformation, and program delivery
-                for mid-market organisations.
-              </p>
-              <span className="status-pill status-pill--green">Now open</span>
-            </div>
-
-            <div className="group-card group-card--gold-accent">
-              <p className="eyebrow eyebrow--card">SaaS products</p>
-              <h3 className="group-card__title">ME Products</h3>
-              <p className="group-card__body">
-                Operations software for multi-chapter charities and welfare
-                organisations. ME Kind Cloud is in active pilot. ME Pulse is in
-                development.
-              </p>
-              <span className="status-pill status-pill--amber">In development</span>
-            </div>
-
-            <div className="group-card group-card--navy-accent">
-              <p className="eyebrow eyebrow--card">Thought leadership</p>
-              <h3 className="group-card__title">ME Content</h3>
-              <p className="group-card__body">
-                The book, the thinking, and the LinkedIn content that sits behind
-                everything we build.
-              </p>
-              <span className="status-pill status-pill--neutral">In progress</span>
             </div>
           </div>
         </ContentWrapper>

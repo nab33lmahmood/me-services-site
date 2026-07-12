@@ -1,96 +1,159 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentWrapper from '@/components/ContentWrapper'
 import Footer from '@/components/Footer'
 import Nav from '@/components/Nav'
 
-const trustItems = [
-  { label: 'Governance', title: 'Trustees always free' },
-  { label: 'Transparency', title: 'No per-donor fees' },
-  { label: 'Speed', title: 'Live today' },
-  { label: 'Efficiency', title: 'Time saved every month' },
+export const metadata: Metadata = {
+  title: 'Products | Mindful Engagement',
+  description:
+    'ME Kind Cloud for multi-chapter charity operations, and ME Pulse for operational health. Software built with the same philosophy as our advisory work.',
+}
+
+const kindCloudBenefits = [
+  'Donors, appeals, events, pledges, and phone donations in one platform',
+  'Multi-currency chapters across countries, no fake conversions',
+  'AI-assisted reporting that turns data into board-ready insight',
+  'Built for how charities actually operate, not a generic CRM',
 ]
+
+const proofChips = [
+  'Live today',
+  'Trustees always free',
+  'No per-donor fees',
+  'Multi-currency',
+  'AI reporting',
+]
+
+function BenefitCheck() {
+  return (
+    <svg
+      className="products-flagship__check"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M20 6L9 17l-5-5" />
+    </svg>
+  )
+}
 
 export default function ProductsPage() {
   return (
     <>
       <Nav />
 
-      <section className="page-hero page-hero--compact">
+      <section className="page-hero">
         <ContentWrapper>
-          <p className="eyebrow eyebrow--gold">Products</p>
+          <p className="eyebrow eyebrow--light-gold">Products</p>
           <h1 className="page-hero__heading">
             Software built on the same philosophy.
           </h1>
-          <p className="page-hero__subheading">
+          <p className="page-hero__subheading page-hero__subheading--products">
             The ME philosophy does not stop at consultancy. We build software
-            with the same intentionality over busyness, awareness over
-            reactivity, and outcomes over output that guides our advisory work.
+            with the same intent: tools that take the load off the people who
+            run mission-driven organisations.
           </p>
         </ContentWrapper>
       </section>
 
-      <section
-        className="section--off-white"
-        style={{
-          paddingTop: 'var(--me-space-6)',
-          paddingBottom: 'var(--me-space-4)',
-        }}
-      >
+      <section className="section--off-white section-pad--about">
         <ContentWrapper>
-          <div className="products-stack">
-            <div className="pillar-card pillar-card--navy-accent">
+          <div className="products-flagship__grid">
+            <div>
+              <div className="products-flagship__eyebrow-row">
+                <p className="eyebrow eyebrow--gold">Charity operations</p>
+                <span className="products-flagship__live-badge">Live now</span>
+              </div>
+              <h2 className="products-flagship__heading">ME Kind Cloud</h2>
+              <p className="products-flagship__value">
+                Everything a multi-chapter charity needs to run fundraising,
+                donors, and reporting. In one place.
+              </p>
+              <ul className="products-flagship__benefits">
+                {kindCloudBenefits.map((benefit) => (
+                  <li key={benefit} className="products-flagship__benefit">
+                    <BenefitCheck />
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+              <div className="products-flagship__chips">
+                {proofChips.map((chip) => (
+                  <span key={chip} className="products-proof-chip">
+                    {chip}
+                  </span>
+                ))}
+              </div>
+              <div className="products-flagship__buttons">
+                <a
+                  href="https://kindcloud.mindful-engagement.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--gold-cta"
+                >
+                  See it in action
+                </a>
+                <Link href="/contact" className="btn btn--secondary">
+                  Book a walkthrough
+                </Link>
+              </div>
+            </div>
+
+            <div>
               <img
                 src="/screenshots/kind-cloud/dashboard-multicurrency.png"
                 alt="ME Kind Cloud dashboard showing multi-currency chapter totals"
-                className="kind-cloud-feature__image"
-                style={{ marginBottom: 'var(--me-space-4)' }}
+                className="products-flagship__screenshot"
               />
-              <p className="eyebrow eyebrow--card">Charity operations</p>
-              <h3 className="pillar-card__title">ME Kind Cloud</h3>
-              <p className="pillar-card__body">
-                Operations software for multi-chapter charities and welfare
-                organisations.
-              </p>
-              <span className="status-pill status-pill--green">Live</span>
-              <Link href="/products/kind-cloud" className="pillar-card__link">
-                Learn more &rarr;
-              </Link>
             </div>
+          </div>
+        </ContentWrapper>
+      </section>
 
-            <div className="product-listing product-listing--compact product-listing--gold-accent">
-              <div className="product-listing__header">
-                <p className="eyebrow eyebrow--card">Operational health</p>
-                <h3 className="product-listing__title">ME Pulse</h3>
-                <span className="status-pill status-pill--amber">
-                  Early Access Soon
+      <section className="section--off-white products-pulse-section">
+        <ContentWrapper>
+          <div className="products-pulse-card">
+            <div className="products-pulse-card__grid">
+              <div>
+                <p className="eyebrow eyebrow--gold">Operational health</p>
+                <h2 className="products-pulse-card__heading">ME Pulse</h2>
+                <span className="products-pulse-card__status">
+                  Early access soon
                 </span>
               </div>
-              <div className="product-listing__detail">
-                <p className="product-listing__body">
-                  Most tools ask what you need to do. ME Pulse asks what must
-                  always be true.
+
+              <div>
+                <p className="products-pulse-card__hook">
+                  Most tools ask what you need to do.{' '}
+                  <span className="products-pulse-card__hook-accent">
+                    ME Pulse asks what must always be true.
+                  </span>
                 </p>
-                <p className="product-listing__body">
+                <p className="products-pulse-card__body">
                   A weekly fifteen-minute check across the domains that matter,
-                  so the things that quietly degrade get caught while they&apos;re
+                  so the things that quietly degrade get caught while they are
                   still small.
                 </p>
+                <Link
+                  href="/contact"
+                  className="btn btn--primary products-pulse-card__cta"
+                >
+                  Join the early access list &rarr;
+                </Link>
               </div>
             </div>
           </div>
         </ContentWrapper>
       </section>
 
-      <section className="kind-cloud-trust-strip" aria-label="Product philosophy">
+      <section className="products-closing">
         <ContentWrapper>
-          <div className="kind-cloud-trust-strip__grid">
-            {trustItems.map((item) => (
-              <div key={item.title} className="kind-cloud-trust-strip__item">
-                <p className="kind-cloud-trust-strip__label">{item.label}</p>
-                <p className="kind-cloud-trust-strip__value">{item.title}</p>
-              </div>
-            ))}
-          </div>
+          <p className="products-closing__line">
+            Two products, one belief:{' '}
+            <span className="products-closing__tagline">
+              know what is healthy, fix what is not.
+            </span>
+          </p>
         </ContentWrapper>
       </section>
 

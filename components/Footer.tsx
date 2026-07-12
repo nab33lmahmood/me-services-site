@@ -6,6 +6,8 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
+  { href: '/products', label: 'Products' },
+  { href: '/values', label: 'Values' },
   { href: '/work', label: 'Work' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -49,12 +51,12 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/in/mahmoodnabeel"
+                  href="https://www.linkedin.com/company/mindful-engagement/"
                   className="footer__contact-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  linkedin.com/in/mahmoodnabeel
+                  LinkedIn
                 </a>
               </li>
               <li>
