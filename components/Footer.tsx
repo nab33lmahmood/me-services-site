@@ -19,10 +19,11 @@ export default function Footer() {
         <div className="footer__columns">
           <div>
             <Wordmark variant="footer" />
-            <p className="footer__brand-tagline">Mindful Engagement</p>
+            <p className="footer__brand-tagline">Mindful Engagement Pty Ltd</p>
             <p className="footer__brand-tagline">
-              ABN 65 882 498 703. Melbourne, Australia.
+              ACN 700 286 460 | ABN 88 700 286 460
             </p>
+            <p className="footer__brand-tagline">Melbourne, Australia.</p>
           </div>
 
           <div>
@@ -71,7 +72,7 @@ export default function Footer() {
         <hr className="footer__divider" />
 
         <p className="footer__bottom">
-          2026 Mindful Engagement. All rights reserved.
+          2026 Mindful Engagement Pty Ltd. All rights reserved.
         </p>
       </ContentWrapper>
     </footer>
