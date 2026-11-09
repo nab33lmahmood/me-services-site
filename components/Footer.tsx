@@ -12,6 +12,12 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ]
 
+const legalLinks = [
+  { href: '/privacy', label: 'Privacy' },
+  { href: '/terms', label: 'Terms of Use' },
+  { href: '/health-check-terms', label: 'Health Check Terms' },
+]
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -65,6 +71,19 @@ export default function Footer() {
                   Melbourne, VIC, Australia
                 </span>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="footer__heading">Legal</h2>
+            <ul className="footer__nav-links">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="footer__link">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
