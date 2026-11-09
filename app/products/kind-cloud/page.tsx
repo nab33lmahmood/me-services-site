@@ -249,9 +249,9 @@ export default function KindCloudPage() {
         <ContentWrapper>
           <div className="group-card group-card--gold-accent">
             <p className="group-card__body">
-              Currently in active pilot with a UK-headquartered welfare
-              organisation operating chapters across Australia, the UK, and
-              Pakistan.
+              Built alongside a UK-headquartered welfare charity running
+              chapters across Australia, the UK and Pakistan. Going live
+              November 2026.
             </p>
           </div>
         </ContentWrapper>
@@ -266,6 +266,10 @@ export default function KindCloudPage() {
             <h2 className="closing-cta__heading">
               Interested in a walkthrough for your organisation?
             </h2>
+            <p className="closing-cta__body">
+              Founding partner places are open for a small number of
+              multi-chapter charities.
+            </p>
             <div className="closing-cta__button">
               <Link href={contactHref} className="btn btn--gold-cta">
                 Get in touch
