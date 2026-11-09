@@ -204,15 +204,19 @@ export default function HomePage() {
                 operate.
               </p>
               <p className="kind-cloud-feature__highlight">
-                Now in pilot, with growing interest from charities using AI to
-                cut the load of admin and reporting.
+                Built alongside a UK-headquartered welfare charity running
+                chapters on three continents. Going live November 2026.
+              </p>
+              <p className="kind-cloud-feature__body">
+                Founding partner places are open for a small number of
+                multi-chapter charities.
               </p>
               <div className="kind-cloud-feature__buttons">
                 <Link href="/products/kind-cloud" className="btn btn--gold-cta">
                   See it in action
                 </Link>
                 <Link href="/contact" className="btn btn--secondary">
-                  Book a walkthrough
+                  Become a founding partner
                 </Link>
               </div>
             </div>
