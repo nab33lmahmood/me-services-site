@@ -162,13 +162,25 @@ export default function ServicesPage() {
 
               <div className="health-check-feature__price-box">
                 <p className="health-check-feature__price">$650</p>
-                <p className="health-check-feature__price-label">fixed fee</p>
+                <p className="health-check-feature__price-label">
+                  + <span className="health-check-feature__price-gst">GST</span>, fixed fee
+                </p>
                 <Link
                   href="/contact"
                   className="btn btn--gold-cta health-check-feature__button"
                 >
                   Book a health check
                 </Link>
+                <p className="health-check-feature__terms">
+                  Fixed fee,{' '}
+                  <Link
+                    href="/health-check-terms"
+                    className="health-check-feature__terms-link"
+                  >
+                    terms apply
+                  </Link>
+                  .
+                </p>
               </div>
             </div>
           </div>
