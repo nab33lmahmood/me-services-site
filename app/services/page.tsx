@@ -156,7 +156,7 @@ export default function ServicesPage() {
                 </p>
                 <p className="health-check-feature__note">
                   Fee credited toward your first consulting engagement if you
-                  proceed.
+                  proceed within 90 days of your report.
                 </p>
               </div>
 

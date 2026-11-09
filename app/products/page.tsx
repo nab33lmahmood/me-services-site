@@ -18,7 +18,7 @@ const kindCloudBenefits = [
 ]
 
 const proofChips = [
-  'Live today',
+  'In pilot today',
   'Trustees always free',
   'No per-donor fees',
   'Multi-currency',
@@ -62,7 +62,7 @@ export default function ProductsPage() {
             <div>
               <div className="products-flagship__eyebrow-row">
                 <p className="eyebrow eyebrow--gold">Charity operations</p>
-                <span className="products-flagship__live-badge">Live now</span>
+                <span className="products-flagship__live-badge">In pilot</span>
               </div>
               <h2 className="products-flagship__heading">ME Kind Cloud</h2>
               <p className="products-flagship__value">

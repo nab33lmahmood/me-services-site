@@ -134,6 +134,10 @@ export default function WorkPage() {
               </div>
             ))}
           </div>
+          <p className="kind-cloud-trust-strip__tagline">
+            Figures reflect our principals&apos; experience across previous
+            senior roles.
+          </p>
         </ContentWrapper>
       </section>
 

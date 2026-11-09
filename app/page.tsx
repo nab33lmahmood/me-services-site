@@ -134,6 +134,10 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <p className="kind-cloud-trust-strip__tagline">
+            Figures reflect our principals&apos; experience across previous
+            senior roles.
+          </p>
         </ContentWrapper>
       </section>
 
@@ -164,9 +168,9 @@ export default function HomePage() {
               <h3 className="group-card__title">ME Products</h3>
               <p className="group-card__body">
                 Operations software for charities and welfare organisations. ME
-                Kind Cloud is live. ME Pulse in development.
+                Kind Cloud is in pilot. ME Pulse in development.
               </p>
-              <span className="status-pill status-pill--green">Live</span>
+              <span className="status-pill status-pill--green">In pilot</span>
             </div>
 
             <div className="group-card group-card--navy-accent">
@@ -200,8 +204,8 @@ export default function HomePage() {
                 operate.
               </p>
               <p className="kind-cloud-feature__highlight">
-                Live now, with growing interest from charities using AI to cut
-                the load of admin and reporting.
+                Now in pilot, with growing interest from charities using AI to
+                cut the load of admin and reporting.
               </p>
               <div className="kind-cloud-feature__buttons">
                 <Link href="/products/kind-cloud" className="btn btn--gold-cta">
@@ -303,6 +307,10 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
+              <p className="work-intro__sub">
+                Figures reflect our principals&apos; experience across previous
+                senior roles.
+              </p>
             </div>
           </div>
         </ContentWrapper>
