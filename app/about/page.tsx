@@ -22,7 +22,7 @@ const directors = [
     initials: 'NM',
     name: 'Nabeel Mahmood',
     role: 'Founder and Managing Director',
-    bio: 'Twenty years in senior technology leadership. $20M+ portfolios managed, 150+ enterprise applications governed. Sets the strategy and standard of the group.',
+    bio: 'Twenty years in senior technology leadership. In previous roles, managed $20M+ portfolios and governed 150+ enterprise applications. Sets the strategy and standard of the group.',
     avatarImage: {
       src: '/images/team/nabeel-mahmood.jpg',
       alt: 'Nabeel Mahmood',

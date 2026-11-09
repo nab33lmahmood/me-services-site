@@ -268,7 +268,9 @@ export default function KindCloudPage() {
             </h2>
             <p className="closing-cta__body">
               Founding partner places are open for a small number of
-              multi-chapter charities.
+              multi-chapter charities, on terms agreed in writing with each
+              partner. Each charity owns its data and can export it in full at
+              any time.
             </p>
             <div className="closing-cta__button">
               <Link href={contactHref} className="btn btn--gold-cta">
