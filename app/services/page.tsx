@@ -155,8 +155,15 @@ export default function ServicesPage() {
                   to fix first. Delivered as a written report within 48 hours.
                 </p>
                 <p className="health-check-feature__note">
-                  Fee credited toward your first consulting engagement if you
-                  proceed within 90 days of your report.
+                  The $650 fee (excluding GST) is credited toward your first
+                  consulting engagement if you engage us within 90 days of
+                  receiving your report. See{' '}
+                  <Link
+                    href="/health-check-terms"
+                    className="health-check-feature__terms-link"
+                  >
+                    Health Check Terms
+                  </Link>.
                 </p>
               </div>
 

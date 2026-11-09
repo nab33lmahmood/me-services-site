@@ -40,8 +40,8 @@ const serviceCards: {
 
 const stats = [
   { number: '20', label: 'Years of experience' },
-  { number: '$20M', label: 'Portfolio managed' },
-  { number: '150', label: 'Enterprise apps governed' },
+  { number: '$20M', label: 'Portfolio managed in prior roles' },
+  { number: '150', label: 'Enterprise apps governed in prior roles' },
   { number: '2.3M', label: 'Files migrated' },
 ]
 
@@ -126,6 +126,9 @@ export default function HomePage() {
 
       <section className="kind-cloud-trust-strip" aria-label="Key stats">
         <ContentWrapper>
+          <p className="eyebrow eyebrow--light-gold">
+            Our principals&apos; track record
+          </p>
           <div className="kind-cloud-trust-strip__grid">
             {stats.map((stat) => (
               <div key={stat.label} className="kind-cloud-trust-strip__item">
@@ -209,7 +212,9 @@ export default function HomePage() {
               </p>
               <p className="kind-cloud-feature__body">
                 Founding partner places are open for a small number of
-                multi-chapter charities.
+                multi-chapter charities, on terms agreed in writing with each
+                partner. Each charity owns its data and can export it in full at
+                any time.
               </p>
               <div className="kind-cloud-feature__buttons">
                 <Link href="/products/kind-cloud" className="btn btn--gold-cta">
@@ -296,6 +301,9 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
+              <p className="eyebrow eyebrow--navy">
+                Our principals&apos; track record
+              </p>
               <div className="about-teaser__credentials-stats">
                 {principalStats.map((stat) => (
                   <div

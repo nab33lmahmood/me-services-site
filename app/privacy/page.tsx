@@ -67,8 +67,11 @@ export default function PrivacyPage() {
       <p>
         When organisations use our software products, such as ME Kind Cloud, we
         handle the data they store in those products on their behalf, under our
-        written agreement with that organisation. Questions about that data
-        should go first to the organisation that collected it.
+        written agreement with that organisation. Those agreements include data
+        processing terms covering where data is stored, how it is secured, and
+        the safeguards that apply when it is transferred between countries.
+        Questions about that data should go first to the organisation that
+        collected it.
       </p>
 
       <h2>7. Cookies</h2>

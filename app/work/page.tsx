@@ -126,6 +126,9 @@ export default function WorkPage() {
 
       <section className="work-metrics" aria-label="Key metrics">
         <ContentWrapper>
+          <p className="eyebrow eyebrow--light-gold">
+            Our principals&apos; track record
+          </p>
           <div className="work-metrics__grid">
             {metrics.map((metric) => (
               <div key={metric.label}>
