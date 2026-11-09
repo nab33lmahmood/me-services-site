@@ -34,7 +34,7 @@ const features = [
 const valueItems = [
   { label: 'Governance', title: 'Trustees always free' },
   { label: 'Transparency', title: 'No per-donor fees' },
-  { label: 'Speed', title: 'Live today' },
+  { label: 'Speed', title: 'In pilot today' },
   { label: 'Efficiency', title: 'Time saved every month' },
 ]
 
