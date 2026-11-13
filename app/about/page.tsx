@@ -3,6 +3,11 @@ import Link from 'next/link'
 import ContentWrapper from '@/components/ContentWrapper'
 import Footer from '@/components/Footer'
 import Nav from '@/components/Nav'
+import {
+  founderCreed,
+  founderStoryParagraphs,
+  mePrinciples,
+} from '@/content/founder'
 import DirectorAvatar from './DirectorAvatar'
 
 export const metadata: Metadata = {
@@ -10,12 +15,6 @@ export const metadata: Metadata = {
   description:
     'Meet the founder, directors, and principals behind Mindful Engagement. A technology group built by practitioners who think at board level and deliver at the coalface.',
 }
-
-const principles = [
-  'Intentionality over busyness',
-  'Awareness over reactivity',
-  'Outcomes over output',
-]
 
 const directors = [
   {
@@ -129,22 +128,16 @@ export default function AboutPage() {
                 </div>
               </div>
 
+              {founderStoryParagraphs.map((paragraph) => (
+                <p key={paragraph} className="section-body">
+                  {paragraph}
+                </p>
+              ))}
+              <p className="founder-story__creed">{founderCreed}</p>
               <p className="section-body">
-                I spent twenty years leading technology inside other
-                people&apos;s organisations, across government, healthcare,
-                insurance, and retail. I learned that the work that endures is
-                rarely the work that looks busiest. It is the work done with
-                intention, by senior people who stay close to it from strategy
-                through to delivery.
-              </p>
-              <p className="section-body">
-                Mindful Engagement exists to work that way on purpose. We keep
-                teams small and senior. We think at board level and we deliver at
-                the coalface. Alongside the consultancy, we build products and
-                publish thinking under the same philosophy.
-              </p>
-              <p className="founder-story__creed">
-                Know what is healthy. Fix what is not.
+                <Link href="/nabeel" className="contact-info-card__link">
+                  More about Nabeel
+                </Link>
               </p>
             </div>
 
@@ -156,7 +149,7 @@ export default function AboutPage() {
                   philosophy. It is a leadership one.
                 </p>
                 <ul className="philosophy-card__list">
-                  {principles.map((principle) => (
+                  {mePrinciples.map((principle) => (
                     <li key={principle} className="philosophy-card__item">
                       <span className="philosophy-card__dash">-</span>
                       {principle}

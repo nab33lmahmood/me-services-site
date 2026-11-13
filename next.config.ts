@@ -20,6 +20,22 @@ const nextConfig: NextConfig = {
     }
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'mahmoods.com.au' }],
+        destination: 'https://www.mindful-engagement.com/nabeel',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.mahmoods.com.au' }],
+        destination: 'https://www.mindful-engagement.com/nabeel',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
